@@ -1,0 +1,21 @@
+@mixin flex($jc: center, $ai: center, $g: 0px) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+}
+
+@mixin img($w: 60px, $h: 60px, $of: cover) {
+    width: $w;
+    height: $h;
+    object-fit: $of;
+}
+
+@mixin bg-img($bg-i: null, $bg-s: cover, $bg-p: center, $bg-r: no-repeat) {
+    @if ($bg-i) {
+        background-image: url($bg-i);
+    }
+    background-size: $bg-s;
+    background-position: $bg-p;
+    background-repeat: $bg-r;
+}

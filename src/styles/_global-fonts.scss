@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@mixin font($c: null, $ff: null, $fw: null, $fs: null) {
+    @if ($c) {
+        color: $c;
+    }
+
+    @if($ff) {
+        font-family: $ff;
+    }
+
+    @if($fw) {
+        font-weight: $fw;
+    }
+
+    @if($fs) {
+        font-size: $fs;
+    }
+}

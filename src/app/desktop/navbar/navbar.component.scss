@@ -1,5 +1,83 @@
 @use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
 
 .navbar {
+    user-select: none;
     background-color: $main-color-lightblue;
+    min-width: 100%;
+    min-height: 104px;
+
+    @include flex($jc: space-around);
+}
+
+.logo {
+    cursor: pointer;
+
+    >img {
+        @include img($w: 58px, $h: 72px, $of: cover);
+    }
+}
+
+.menu-list {
+    @include flex($g: 32px);
+}
+
+.menu-item {
+    transition: all ease-in-out 125ms;
+    list-style: none;
+    min-width: 100px;
+    min-height: 31px;
+    text-align: center;
+
+    @include flex();
+
+    >a {
+        >span {
+            user-select: none;
+            @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 500, $fs: 26px);
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            >span {
+                color: $main-color-white;
+            }
+        }
+    }
+}
+
+.change-language {
+    transition: all ease-in-out 125ms;
+    min-width: 92px;
+    min-height: 31px;
+
+    @include flex($jc: space-around);
+
+    >button {
+        min-width: 36.8px;
+        min-height: 24px;
+
+        >span {
+            @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            >span {
+                color: $main-color-white;
+            }
+        }
+    }
+}
+
+.activ-language {
+    cursor: default !important;
+    @include bg-img($bg-i: '../assets/img/change_language/ellipse24.svg');
+
+    >span {
+        color: $main-color-white !important;
+    }
 }

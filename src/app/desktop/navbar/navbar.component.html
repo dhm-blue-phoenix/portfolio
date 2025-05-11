@@ -1,6 +1,41 @@
 <section>
     <div class="navbar">
-        <img src="img\logo_dark_mob.svg" alt="logo_dark_mob">
-        <p>navbar works!</p>
+        <figure class="logo">
+            <a href="#">
+                <img src="img/logos/logo_dark_mob.svg" alt="logo_dark_mob">
+            </a>
+        </figure>
+        <div class="menu">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a href="#">
+                        <span>Why me</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <span>Skills</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="change-language">
+            <button type="button" (click)="this.changeLanguage('DE')" [disabled]="this.checkLanguage('DE')" [classList]="this.checkLanguage('DE') && 'activ-language'">
+                <span>DE</span>
+            </button>
+            <button type="button" (click)="this.changeLanguage('EN')" [disabled]="this.checkLanguage('EN')" [classList]="this.checkLanguage('EN') && 'activ-language'">
+                <span>EN</span>
+            </button>
+        </div>
     </div>
 </section>
