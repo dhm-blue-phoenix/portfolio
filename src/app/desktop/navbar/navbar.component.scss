@@ -15,11 +15,14 @@
     cursor: pointer;
 
     >img {
+
         @include img($w: 58px, $h: 72px, $of: cover);
     }
 }
 
 .menu-list {
+    min-width: 600px;
+
     @include flex($g: 32px);
 }
 
@@ -35,6 +38,7 @@
     >a {
         >span {
             user-select: none;
+
             @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 500, $fs: 26px);
         }
 
@@ -60,6 +64,8 @@
         min-height: 24px;
 
         >span {
+            text-transform: uppercase;
+
             @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
         }
 
@@ -75,6 +81,7 @@
 
 .activ-language {
     cursor: default !important;
+
     @include bg-img($bg-i: '../assets/img/change_language/ellipse24.svg');
 
     >span {

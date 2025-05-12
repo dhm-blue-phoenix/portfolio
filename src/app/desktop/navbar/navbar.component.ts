@@ -4,10 +4,6 @@ import { CommonModule } from '@angular/common';
 // Services
 import { LanguageService } from '../../services/language.service';
 
-interface LanguageItem {
-  readonly lang: string
-}
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -19,26 +15,40 @@ interface LanguageItem {
 })
 
 export class NavbarComponent {
-  private readonly languageList: LanguageItem[] = [
-    { 'lang': 'DE' },
-    { 'lang': 'EN' }
-  ];
-  public currentLanguage: LanguageItem | undefined;
+  public navMenuRef: string[] = ['navWhy', 'navSkills', 'navProjects', 'navContact'];
+  public app: any = {};
 
-  constructor(private langService: LanguageService) {
-    this.changeLanguage('EN');
+  constructor(private serviceLanguage: LanguageService) {
+    this.app = this.serviceLanguage.getLanguageForAppUi(this.serviceLanguage.currentLanguage);
   }
 
-  public checkLanguage(lang: string): boolean {
-    if (this.currentLanguage) {
-      return this.currentLanguage.lang === lang;
-    }
-    return false;
+  /**
+   * Retrieves the list of all supported languages from the LanguageService.
+   *
+   * @returns An array of supported language codes (e.g., ['de', 'en']).
+   */
+  public getAllLanguages(): string[] {
+    return this.serviceLanguage.getAllLanguages();
   }
 
+  /**
+   * Changes the current language by invoking the LanguageService's changeLanguage method.
+   * Only supported languages ('de' or 'en') are applied; invalid inputs default to 'en'.
+   *
+   * @param lang - The language code to switch to (e.g., 'de', 'en').
+   */
   public changeLanguage(lang: string): void {
-    this.currentLanguage = this.languageList.find(item => item.lang === lang);
+    this.serviceLanguage.changeLanguage(lang);
+    this.app = this.serviceLanguage.getLanguageForAppUi(lang);
+  }
 
-    console.log('Endere Sprache zu:', this.currentLanguage);
+  /**
+   * Checks if the provided language code matches the current language.
+   *
+   * @param lang - The language code to check (e.g., 'de', 'en').
+   * @returns `true` if the provided language is the current language, `false` otherwise.
+   */
+  public checkLanguage(lang: string): boolean {
+    return this.serviceLanguage.checkCurrentLanguage(lang);
   }
 }

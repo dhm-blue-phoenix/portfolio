@@ -1,41 +1,31 @@
 <section>
     <div class="navbar">
         <figure class="logo">
-            <a href="#">
+            <a href="#navHeader">
                 <img src="img/logos/logo_dark_mob.svg" alt="logo_dark_mob">
             </a>
         </figure>
         <div class="menu">
             <ul class="menu-list">
-                <li class="menu-item">
-                    <a href="#">
-                        <span>Why me</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">
-                        <span>Skills</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">
-                        <span>Contact</span>
-                    </a>
-                </li>
+                @for (item of this.app.navbar.menu; track item; let i = $index) {
+                    <li class="menu-item">
+                        <a href="#{{ this.navMenuRef[i] }}">
+                            <span>{{ item }}</span>
+                        </a>
+                    </li>
+                }
             </ul>
         </div>
         <div class="change-language">
-            <button type="button" (click)="this.changeLanguage('DE')" [disabled]="this.checkLanguage('DE')" [classList]="this.checkLanguage('DE') && 'activ-language'">
-                <span>DE</span>
+            @for (lang of this.getAllLanguages(); track lang) {
+            <button type="button"
+                (click)="this.changeLanguage(lang)"
+                [disabled]="this.checkLanguage(lang)"
+                [classList]="this.checkLanguage(lang) && 'activ-language'">
+
+                <span>{{ lang }}</span>
             </button>
-            <button type="button" (click)="this.changeLanguage('EN')" [disabled]="this.checkLanguage('EN')" [classList]="this.checkLanguage('EN') && 'activ-language'">
-                <span>EN</span>
-            </button>
+            }
         </div>
     </div>
 </section>
