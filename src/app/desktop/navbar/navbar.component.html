@@ -1,11 +1,11 @@
 <section>
-    <div class="navbar">
+    <nav>
         <figure class="logo">
             <a href="#navHeader">
                 <img src="img/logos/logo_dark_mob.svg" alt="logo_dark_mob">
             </a>
         </figure>
-        <div class="menu">
+        <div>
             <ul class="menu-list">
                 @for (item of this.app.navbar.menu; track item; let i = $index) {
                     <li class="menu-item">
@@ -27,5 +27,5 @@
             </button>
             }
         </div>
-    </div>
+    </nav>
 </section>

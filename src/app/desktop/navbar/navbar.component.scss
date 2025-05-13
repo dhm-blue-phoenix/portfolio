@@ -2,12 +2,19 @@
 @use '../../../styles/global-fonts' as *;
 @use '../../../styles/globle-mixin' as *;
 
-.navbar {
+section {
     user-select: none;
     background-color: $main-color-lightblue;
-    min-width: 100%;
-    min-height: 104px;
+    max-height: 104px;
+    height: 104px;
 
+    @include flex();
+}
+
+nav {
+    max-width: 1440px;
+    width: 1440px;
+    
     @include flex($jc: space-around);
 }
 
@@ -54,14 +61,14 @@
 
 .change-language {
     transition: all ease-in-out 125ms;
-    min-width: 92px;
-    min-height: 31px;
+    width: 92px;
+    height: 31px;
 
     @include flex($jc: space-around);
 
     >button {
-        min-width: 36.8px;
-        min-height: 24px;
+        width: 36.8px;
+        height: 24px;
 
         >span {
             text-transform: uppercase;

@@ -1,0 +1,138 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+section {
+    // flexbox
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: calc(100vh - 104px);
+}
+
+header {
+    max-width: 1214px;
+    max-height: 705px;
+    width: 100%;
+    height: 705px;
+
+    //flexbox 
+    display: flex;
+}
+
+
+.header-left,
+.header-right {
+    flex: 1;
+}
+
+.header-left {
+    background-color: green;
+}
+
+.header-right {
+
+    >div {
+
+        height: 100%;
+
+        //flexbox 
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+}
+
+.right-logo {
+    flex: 1;
+    position: relative;
+
+    >figure {
+        >hr {
+            opacity: 0;
+        }
+
+        &:first-child {
+            height: 100%;
+
+            //flexbox 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            >img {
+                @include img($w: 66px, $h: 73px, $of: cover);
+            }
+        }
+    }
+}
+
+.right-icon-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+
+    //flexbox 
+    display: flex;
+    align-items: center;
+
+    >figure {
+        height: 122px;
+
+        //flexbox 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        >img {
+            @include img($w: 30px, $h: 30px, $of: cover);
+        }
+    }
+}
+
+.right-headline {
+    flex: 1;
+    text-align: center;
+    color: $main-color-white;
+
+    >h1 {
+        @include font($fw: 400, $fs: 80px, $ff: 'Anta');
+    }
+
+    >h2 {
+        @include font($fw: 400, $fs: 40px, $ff: 'Josefin Sans');
+        text-transform: uppercase;
+    }
+}
+
+.right-btn {
+    flex: 1;
+
+
+    display: flex;
+    justify-content: center;
+
+    >figure {
+        height: 100%;
+
+        // Flexbox
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+
+
+        >hr {
+            opacity: 0;
+        }
+
+        >a {
+            >img {
+                @include img($w: 38px, $h: 89px, $of: cover);
+            }
+        }
+    }
+}
