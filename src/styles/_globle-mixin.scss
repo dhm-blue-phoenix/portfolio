@@ -1,8 +1,11 @@
-@mixin flex($jc: center, $ai: center, $g: 0px) {
+@mixin flex($jc: center, $ai: center, $g: 0px, $fd: null) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
     gap: $g;
+    @if($fd) {
+        flex-direction: $fd;
+    }
 }
 
 @mixin img($w: 60px, $h: 60px, $of: cover) {

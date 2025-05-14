@@ -3,11 +3,10 @@
 @use '../../../styles/globle-mixin' as *;
 
 section {
-    // flexbox
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    user-select: none;
     min-height: calc(100vh - 104px);
+
+    @include flex($ai: flex-end);
 }
 
 header {
@@ -15,8 +14,6 @@ header {
     max-height: 705px;
     width: 100%;
     height: 705px;
-
-    //flexbox 
     display: flex;
 }
 
@@ -26,20 +23,64 @@ header {
     flex: 1;
 }
 
+// >> Header Left Container
 .header-left {
-    background-color: green;
+    display: flex;
+    align-items: flex-end;
+
+    >figure {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+
+        >img {
+            z-index: 1;
+
+            @include img($w: 535px, $h: 683px);
+
+            &:hover {
+
+                &:hover~.left-img-bg {
+                    opacity: 0;
+                }
+
+                &:hover~.left-img-bg-hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
 
+.left-img-bg,
+.left-img-bg-hover {
+    position: absolute;
+    transform: rotate(241deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 580px;
+    height: 616px;
+    transition: opacity 125ms ease-in-out;
+    z-index: 0;
+}
+
+.left-img-bg {
+    opacity: 1;
+    background-image: url('../../../assets/img/header/ellipseDefault.svg');
+}
+
+.left-img-bg-hover {
+    background-image: url('../../../assets/img/header/ellipseHover.svg');
+    opacity: 0;
+}
+
+// >> Header Right Container
 .header-right {
 
     >div {
-
         height: 100%;
 
-        //flexbox 
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
+        @include flex($jc: space-around, $ai: normal, $fd: column);
     }
 }
 
@@ -48,6 +89,7 @@ header {
     position: relative;
 
     >figure {
+
         >hr {
             opacity: 0;
         }
@@ -55,14 +97,10 @@ header {
         &:first-child {
             height: 100%;
 
-            //flexbox 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
+            @include flex($jc: space-evenly, $fd: column);
 
             >img {
-                @include img($w: 66px, $h: 73px, $of: cover);
+                @include img($w: 66px, $h: 73px);
             }
         }
     }
@@ -74,21 +112,34 @@ header {
     right: 0;
     height: 100%;
 
-    //flexbox 
-    display: flex;
-    align-items: center;
+    @include flex();
 
-    >figure {
+    >div {
         height: 122px;
 
-        //flexbox 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flex($jc: space-between, $fd: column);
+    }
+}
 
+.right-icon-bar-item {
+    position: relative;
 
-        >img {
-            @include img($w: 30px, $h: 30px, $of: cover);
+    >img {
+
+        @include img($w: 30px, $h: 30px);
+    }
+
+    >a {
+        opacity: 0;
+        position: absolute;
+        border-radius: 100%;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+    
+        &:hover {
+            opacity: 1;
         }
     }
 }
@@ -118,20 +169,23 @@ header {
     >figure {
         height: 100%;
 
-        // Flexbox
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-
+        @include flex($jc: space-evenly, $fd: column);
 
         >hr {
             opacity: 0;
         }
 
         >a {
+            transition: all ease-in-out 125ms;
+            border-radius: 30px;
+            height: 89px;
+
+            &:hover {
+                background-color: $main-color-white-hover;
+            }
+
             >img {
-                @include img($w: 38px, $h: 89px, $of: cover);
+                @include img($w: 38px, $h: 89px);
             }
         }
     }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Services
@@ -14,12 +14,17 @@ import { LanguageService } from '../../services/language.service';
   styleUrl: './navbar.component.scss'
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   public navMenuRef: string[] = ['navWhy', 'navSkills', 'navProjects', 'navContact'];
   public app: any = {};
 
-  constructor(private serviceLanguage: LanguageService) {
-    this.app = this.serviceLanguage.getLanguageForAppUi(this.serviceLanguage.currentLanguage);
+  constructor(private serviceLanguage: LanguageService) {}
+
+  ngOnInit() {
+    const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {
+      this.app = this.serviceLanguage.getLanguageForAppUi(lang);
+    });
+    this.serviceLanguage.registerSubscription(subscription);
   }
 
   /**

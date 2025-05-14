@@ -89,7 +89,7 @@ nav {
 .activ-language {
     cursor: default !important;
 
-    @include bg-img($bg-i: '../assets/img/change_language/ellipse24.svg');
+    @include bg-img($bg-i: '../assets/img/change_language/ellipse.svg');
 
     >span {
         color: $main-color-white !important;

@@ -11,6 +11,9 @@ export class EnLangService {
   public app = {
     'lang': 'en',
     'app': {
+      'header': {
+        'headline': 'Frontend Developer'
+      },
       'navbar': {
         'menu': ['Why me', 'Skills', 'Projects', 'Contact']
       }

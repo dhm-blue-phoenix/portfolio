@@ -1,6 +1,12 @@
 <section>
     <header>
-        <div class="header-left">a</div>
+        <div class="header-left">
+            <figure>
+                <img src="img/header/person.png" alt="person">
+                <div class="left-img-bg"></div>
+                <div class="left-img-bg-hover"></div>
+            </figure>
+        </div>
         <div class="header-right">
             <div>
                 <div class="right-logo">
@@ -9,28 +15,37 @@
                         <img src="img/logos/logo.svg" alt="logo">
                     </figure>
                     <div class="right-icon-bar">
-                        <figure>
-                            <a href="#">
-                                <img src="img/buttons/email_button.svg" alt="email_button">
-                            </a>
-                            <a href="#">
-                                <img src="img/buttons/github_button.svg" alt="github_button">
-                            </a>
-                            <a href="#">
-                                <img src="img/buttons/linkedin_button.svg" alt="linkedin_button">
-                            </a>
-                        </figure>
+                        <div>
+                            <figure class="right-icon-bar-item">
+                                <img src="img/logos/email_logo.svg" alt="email_logo">
+                                <a href="google.com">
+                                    <img src="img/logos/email_logo_hover.svg" alt="email_logo_hover">
+                                </a>
+                            </figure>
+                            <figure class="right-icon-bar-item">
+                                <img src="img/logos/github_logo.svg" alt="github_logo">
+                                <a href="#">
+                                    <img src="img/logos/github_logo_hover.svg" alt="github_logo_hover">
+                                </a>
+                            </figure>
+                            <figure class="right-icon-bar-item">
+                                <img src="img/logos/linkedin_logo.svg" alt="linkedin_logo">
+                                <a href="#">
+                                    <img src="img/logos/linkedin_logo_hover.svg" alt="linkedin_logo_hover">
+                                </a>
+                            </figure>
+                        </div>
                     </div>
                 </div>
                 <div class="right-headline">
                     <h1>Dominik Mozelt</h1>
-                    <h2>Frontend Developer</h2>
+                    <h2>{{ this.app.header.headline }}</h2>
                 </div>
                 <div class="right-btn">
                     <figure>
                         <hr>
                         <a href="#navWhy">
-                            <img src="img/buttons/arrow_down_button.svg" alt="arrow_down_button">
+                            <img src="img/buttons/arrow_btn_down.svg" alt="arrow_down_button">
                         </a>
                     </figure>
                 </div>

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 // Services
 import { DeLangService } from '../lang/de-lang.service';
@@ -13,7 +14,10 @@ interface AppUiLanguage {
   providedIn: 'root'
 })
 
-export class LanguageService {
+export class LanguageService implements OnDestroy {
+
+  public currentLanguage = new BehaviorSubject<string>('en');
+  private subscriptions: Subscription[] = [];
 
   constructor(
     private serviceLangDe: DeLangService,
@@ -24,65 +28,64 @@ export class LanguageService {
 
   // >> Private Functions
   private readonly languages: string[] = ['de', 'en'];
-  
+
   /**
    * Retrieves the primary language code from the browser's language settings.
    * Extracts the base language code (e.g., 'de' from 'de-DE' or 'en' from 'en-US').
-  *
-  * @private
-  * @returns The primary language code in lowercase (e.g., 'de', 'en').
-  */
- private getBrowserLanguage(): string {
-   const browserLang = navigator.language || navigator.languages[0];
-   return browserLang.split('-')[0].toLowerCase();
+   *
+   * @private
+   * @returns The primary language code in lowercase (e.g., 'de', 'en').
+   */
+  private getBrowserLanguage(): string {
+    const browserLang = navigator.language || navigator.languages[0];
+    return browserLang.split('-')[0].toLowerCase();
   }
-  
+
   /**
    * Determines the preferred language, defaulting to 'en' if the browser language
    * is not supported. Updates the currentLanguage property.
-  *
-  * @private
-  * @returns The preferred language code ('de', 'en', or fallback language).
-  */
- private getPreferredLanguage(): 'de' | 'en' | string {
-   const lang = this.getBrowserLanguage();
-   const resultLang = lang === 'de' || lang === 'en' ? lang : 'en';
-   this.currentLanguage = resultLang;
-   return resultLang;
+   *
+   * @private
+   * @returns The preferred language code ('de', 'en', or fallback language).
+   */
+  private getPreferredLanguage(): 'de' | 'en' | string {
+    const lang = this.getBrowserLanguage();
+    const resultLang = lang === 'de' || lang === 'en' ? lang : 'en';
+    this.currentLanguage.next(resultLang);
+    return resultLang;
   }
-  
+
   // >> Public Functions
-  public currentLanguage: string = '';
-  
   /**
    * Retrieves the list of all supported languages.
-  *
-  * @returns An array of supported language codes (e.g., ['de', 'en']).
-  */
- public getAllLanguages(): string[] {
-   return this.languages;
+   *
+   * @returns An array of supported language codes (e.g., ['de', 'en']).
+   */
+  public getAllLanguages(): string[] {
+    return this.languages;
   }
-  
+
   /**
    * Checks if the provided language code matches the current language.
-  *
-  * @param lang - The language code to check (e.g., 'de', 'en').
-  * @returns `true` if the provided language is the current language, `false` otherwise.
-  */
- public checkCurrentLanguage(lang: string): boolean {
-   return this.currentLanguage === lang;
+   *
+   * @param lang - The language code to check (e.g., 'de', 'en').
+   * @returns `true` if the provided language is the current language, `false` otherwise.
+   */
+  public checkCurrentLanguage(lang: string): boolean {
+    return this.currentLanguage.value === lang;
   }
-  
+
   /**
    * Changes the current language to the specified language code.
    * Only allows switching to supported languages ('de' or 'en'); defaults to 'en' for invalid inputs.
-  *
-  * @param lang - The language code to switch to (e.g., 'de', 'en').
-  */
- public changeLanguage(lang: string): void {
-   this.currentLanguage = lang === 'de' ? 'de' : 'en';
+   *
+   * @param lang - The language code to switch to (e.g., 'de', 'en').
+   */
+  public changeLanguage(lang: string): void {
+    const newLang = lang === 'de' ? 'de' : 'en';
+    this.currentLanguage.next(newLang);
   }
-  
+
   /**
    * Retrieves the application UI data for a specified language.
    * Searches through a predefined list of language-specific app UI configurations
@@ -95,5 +98,21 @@ export class LanguageService {
     const appUiLanguages: AppUiLanguage[] = [this.serviceLangDe.app, this.serviceLangEn.app];
     const appUiLanguage: AppUiLanguage | undefined = appUiLanguages.find(find => find.lang === lang);
     return appUiLanguage?.app || {};
+  }
+
+  /**
+   * Registers a subscription to be managed by the LanguageService.
+   * The subscription is added to an internal array and will be automatically unsubscribed
+   * when the LanguageService is destroyed.
+   * 
+   * @param subscription - The RxJS subscription to register.
+  */
+  public registerSubscription(subscription: Subscription): void {
+    this.subscriptions.push(subscription);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.currentLanguage.complete();
   }
 }

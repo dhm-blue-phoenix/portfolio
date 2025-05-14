@@ -11,6 +11,9 @@ export class DeLangService {
   public app = {
     'lang': 'de',
     'app': {
+      'header': {
+        'headline': 'Frontend Entwickler'
+      },
       'navbar': {
         'menu': ['Warum ich', 'Fähigkeiten', 'Projekte', 'Kontakt']
       }
