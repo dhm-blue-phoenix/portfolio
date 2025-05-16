@@ -28,9 +28,9 @@ nav {
 }
 
 .menu-list {
-    min-width: 600px;
-
-    @include flex($g: 32px);
+    min-width: 800px;
+    
+    @include flex($g: 110px);
 }
 
 .menu-item {

@@ -60,7 +60,7 @@ header {
     background-repeat: no-repeat;
     width: 580px;
     height: 616px;
-    transition: opacity 125ms ease-in-out;
+    transition: opacity 325ms ease-in-out;
     z-index: 0;
 }
 
@@ -100,6 +100,7 @@ header {
             @include flex($jc: space-evenly, $fd: column);
 
             >img {
+                
                 @include img($w: 66px, $h: 73px);
             }
         }
@@ -148,28 +149,29 @@ header {
     flex: 1;
     text-align: center;
     color: $main-color-white;
+    user-select: text;
 
     >h1 {
+
         @include font($fw: 400, $fs: 80px, $ff: 'Anta');
     }
 
     >h2 {
-        @include font($fw: 400, $fs: 40px, $ff: 'Josefin Sans');
         text-transform: uppercase;
+
+        @include font($fw: 400, $fs: 40px, $ff: 'Josefin Sans');
     }
 }
 
 .right-btn {
     flex: 1;
-
-
     display: flex;
     justify-content: center;
-
+    
     >figure {
         height: 100%;
 
-        @include flex($jc: space-evenly, $fd: column);
+        @include flex($jc: space-evenly, $fd: column-reverse);
 
         >hr {
             opacity: 0;
@@ -185,6 +187,7 @@ header {
             }
 
             >img {
+
                 @include img($w: 38px, $h: 89px);
             }
         }

@@ -1,1 +1,28 @@
-<p>why-me works!</p>
+<section>
+    <div class="whyMe">
+        <div class="headline">
+            <h3>{{ this.app.main.sections.why_me.headline }}</h3>
+        </div>
+        <div class="container">
+            <figure class="c-left">
+                <img src="img/main/position_icon.svg" alt="position_icon">
+                <figcaption>
+                    <span>
+                        <span>{{ this.app.main.sections.why_me.left_container.first_text }}</span>
+                        {{ this.app.main.sections.why_me.left_container.last_text }}
+                    </span>
+                </figcaption>
+            </figure>
+            <div class="c-right">
+                <p>
+                    {{ this.app.main.sections.why_me.right_container }}
+                </p>
+                <div>
+                    <a href="#navContact">
+                        <span> {{ this.app.main.sections.why_me.button }} </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

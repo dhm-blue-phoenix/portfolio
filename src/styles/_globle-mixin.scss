@@ -22,3 +22,20 @@
     background-position: $bg-p;
     background-repeat: $bg-r;
 }
+
+@mixin border($br: 0px, $bs: solid, $bw: 0px, $bc: #000) {
+    border-radius: $br;
+    border-style: $bs;
+    border-width: $bw;
+    border-color: $bc;
+}
+
+// Nicht in verwendung!!!
+@mixin container() {
+    width: $w;
+    height: $h;
+    max-width: $max-w;
+    max-height: $max-h;
+    min-width: $min-w;
+    min-height: $min-h;
+}
