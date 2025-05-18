@@ -3,8 +3,7 @@
 @use '../../../../styles/globle-mixin' as *;
 
 section {
-    padding: 80px;
-
+    
     @include flex();
 }
 
