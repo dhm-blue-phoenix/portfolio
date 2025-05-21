@@ -3,19 +3,24 @@
 @use '../../../styles/globle-mixin' as *;
 
 section {
+    position: sticky;
+    top: 0;
+}
+
+nav {
     user-select: none;
     background-color: $main-color-lightblue;
     max-height: 104px;
     height: 104px;
 
     @include flex();
-}
 
-nav {
-    max-width: 1440px;
-    width: 1440px;
-    
-    @include flex($jc: space-around);
+    >div {
+        max-width: 1440px;
+        width: 1440px;
+
+        @include flex($jc: space-around);
+    }
 }
 
 .logo {
@@ -29,14 +34,14 @@ nav {
 
 .menu-list {
     min-width: 800px;
-    
+
     @include flex($g: 110px);
 }
 
 .menu-item {
     transition: all ease-in-out 125ms;
     list-style: none;
-    min-width: 100px;
+    min-width: 140px;
     min-height: 31px;
     text-align: center;
 

@@ -1,1 +1,38 @@
-<p>my-skills works!</p>
+<section>
+    <div class="whyMe">
+        <div class="headline">
+            <h3>{{ this.app.main.sections.mySkills.headline }}</h3>
+        </div>
+        <div class="container">
+            <div class="c-left">
+                @for (image of app.main.sections.mySkills.left_container.images; track image) {
+                <figure class="left-img-item">
+                    <img src="{{ image.path }}" alt="{{ image.title }}">
+                    <figcaption>
+                        <span>{{ image.title }}</span>
+                    </figcaption>
+                </figure>
+                }
+            </div>
+            <div class="c-right">
+                <figure>
+                    <img src="img/main/ellipse_dark.svg" alt="ellipse_dark">
+                    <figcaption>
+                        <span>{{ this.app.main.sections.mySkills.right_container.text_header }}</span>
+                        <div>
+                            @for (image of app.main.sections.mySkills.right_container.images; track image) {
+                            <figure class="right-img-item">
+                                <img src="{{ image.path }}" alt="{{ image.title }}">
+                                <figcaption>
+                                    <span>{{ image.title }}</span>
+                                </figcaption>
+                            </figure>
+                            }
+                        </div>
+                        <p>{{ this.app.main.sections.mySkills.right_container.text_main }}</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

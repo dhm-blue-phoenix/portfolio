@@ -13,6 +13,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
   standalone: true,
   imports: [
     CommonModule,
+
+    // Components
     WhyMeComponent,
     MySkillsComponent,
     MyProjectsComponent,
