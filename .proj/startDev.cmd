@@ -6,6 +6,12 @@ echo.
 echo Starte die Anwendung...
 echo (Beende mit STRG+C)
 
+REM Starte VSCodium
+start ./portfolio.code-workspace
+
+REM Öffne Localhost
+start http://localhost:4200/
+
 REM Starte Dev Server
 call npm run dev-start
 
