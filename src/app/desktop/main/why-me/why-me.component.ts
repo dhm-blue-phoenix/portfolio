@@ -21,7 +21,8 @@ export class WhyMeComponent implements OnInit {
 
   ngOnInit() {
     const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {
-      this.app = this.serviceLanguage.getLanguageForAppUi(lang);
+      const temp: any = this.serviceLanguage.getLanguageForAppUi(lang);
+      this.app = temp.main.sections.why_me;
     });
     this.serviceLanguage.registerSubscription(subscription);
   }

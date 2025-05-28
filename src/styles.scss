@@ -9,8 +9,24 @@
     padding: 0;
 }
 
+
 body {
     background-color: $main-color-black;
+
+    @if $devmode {
+        animation-name: loadingPage;
+        animation-duration: 1s;
+    }
+}
+
+@keyframes loadingPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 button {
@@ -20,4 +36,31 @@ button {
 
 a {
     text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    background-color: $main-color-black;
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: inset 0 0 1.5px $main-color-white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $main-color-lightblue;
+    box-shadow: inset 0 0 1.5px $main-color-black;
+    border-radius: 10px;
+}
+
+::selection {
+    background-color: $main-color-lightblue;
+    color: $main-color-black;
 }

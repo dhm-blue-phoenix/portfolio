@@ -32,6 +32,7 @@ section {
     @include flex($ai: flex-start, $g: 64px);
 }
 
+// >> Left Container
 .c-left {
     flex: 1;
 
@@ -56,6 +57,7 @@ section {
     }
 }
 
+// >> Right Container
 .c-right {
     flex: 1;
     height: 100%;

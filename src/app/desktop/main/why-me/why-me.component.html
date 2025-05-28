@@ -1,25 +1,31 @@
 <section>
     <div class="whyMe">
+
+        <!-- >> Headline Container -->
         <div class="headline">
-            <h3>{{ this.app.main.sections.why_me.headline }}</h3>
+            <h3>{{ this.app.headline }}</h3>
         </div>
         <div class="container">
+
+            <!-- >> Left Contaienr -->
             <figure class="c-left">
                 <img src="img/main/icons/position.svg" alt="position">
                 <figcaption>
                     <span>
-                        <span>{{ this.app.main.sections.why_me.left_container.first_text }}</span>
-                        {{ this.app.main.sections.why_me.left_container.last_text }}
+                        <span>{{ this.app.left_container.first_text }}</span>
+                        {{ this.app.left_container.last_text }}
                     </span>
                 </figcaption>
             </figure>
+
+            <!-- >> Right Contaienr -->
             <div class="c-right">
                 <p>
-                    {{ this.app.main.sections.why_me.right_container }}
+                    {{ this.app.right_container }}
                 </p>
                 <div>
                     <a href="#navContact">
-                        <span>{{ this.app.main.sections.why_me.button }}</span>
+                        <span>{{ this.app.button }}</span>
                     </a>
                 </div>
             </div>

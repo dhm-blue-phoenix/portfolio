@@ -1,0 +1,232 @@
+@use '../../../../styles/global-colors' as *;
+@use '../../../../styles/global-fonts' as *;
+@use '../../../../styles/globle-mixin' as *;
+
+section {
+    width: calc(100vw - 20px);
+    user-select: none;
+}
+
+.headline {
+    user-select: text;
+    text-align: center;
+    padding-bottom: 64px;
+
+    >h3 {
+
+        @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+    }
+}
+
+.container {
+    max-height: 645px;
+    height: 645px;
+}
+
+// >> Nav Container
+.c-nav {
+    margin-left: 102px;
+
+    >ul {
+        display: flex;
+    }
+}
+
+.c-nav-list-item {
+    width: 248px;
+    height: 97px;
+
+    @include flex();
+
+    >button {
+        >span {
+
+            @include font($c: $main-color-lightblue, $fw: 500, $fs: 30px, $ff: 'Josefin Sans');
+
+            &:hover {
+                transition: all 120ms;
+                cursor: pointer;
+                color: $main-color-white;
+            }
+        }
+    }
+}
+
+.activ-nav-btn {
+    background-color: $main-color-lightblack;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: default;
+
+    >button {
+        >span {
+            color: $main-color-white;
+        }
+    }
+}
+
+.c-main {
+    background-color: $main-color-lightblack;
+    max-height: 548px;
+    height: 548px;
+    padding: 32px;
+
+    @include flex($g: 32px, $jc: flex-start, $ai: flex-start);
+}
+
+.activ-main {
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// >> Main Left Container
+.c-main-list {
+    margin-left: 102px;
+    width: 690px;
+    height: 93;
+
+    @include flex($fd: column, $g: 24px);
+}
+
+.c-main-list-item {
+    display: flex;
+
+    >img {
+        margin-right: 24px;
+
+        @include img($w: 29px, $h: 26px, $of: contain);
+    }
+}
+
+.c-main-list-item-text {
+    user-select: text;
+
+    @include flex($ai: flex-start, $fd: column, $g: 24px);
+
+    >span {
+
+        @include font($c: $main-color-white, $fw: 400, $fs: 28px, $ff: 'Josefin Sans');
+    }
+
+    >p {
+
+        @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+    }
+}
+
+.c-main-weeks {
+    padding-left: 20px;
+
+    @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+}
+
+// >> Main Right Container
+.c-main-right {
+
+    @include flex($fd: column, $g: 16px, $jc: flex-start);
+}
+
+.c-main-right-top {
+    width: 168px;
+    text-align: center;
+
+    @include flex($fd: column-reverse, $g: 12px);
+
+    >div {
+
+        @include flex($g: 32px);
+
+        >img {
+
+            @include img($w: 32px, $h: 36px);
+        }
+    }
+
+    >figcaption {
+        >span {
+
+            @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+        }
+    }
+}
+
+.c-main-right-bottom {
+
+    @include flex($fd: column, $g: 34px);
+
+    >img {
+
+        @include img($w: 453.47, $h: 312);
+    }
+
+    >figcaption {
+
+        @include flex($g: 32px);
+
+        >a {
+            transition: all 120ms;
+            width: 132px;
+            height: 48px;
+            border-radius: 30px;
+            border-style: solid;
+
+            @include flex();
+
+            >span {
+
+                @include font($fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+            }
+        }
+
+        >a:first-child {
+            background-color: $main-color-lightblue;
+            border-color: $main-color-lightblue;
+
+            >span {
+                color: $main-color-black;
+            }
+
+            &:hover {
+                background-color: $main-color-white;
+                border-color: $main-color-white;
+            }
+        }
+
+        >a:last-child {
+            border-color: $main-color-lightblue;
+
+            >span {
+                color: $main-color-lightblue;
+            }
+
+            &:hover {
+                background-color: $main-color-white-hover;
+            }
+        }
+    }
+}
+
+.comming-soon {
+    width: 453.47px;
+    height: 312px;
+    background-color: $main-color-white;
+    border-radius: 30px;
+
+    @include flex();
+
+    >span {
+
+        @include font($c: $main-color-lightblue, $fw: 500, $fs: 30px, $ff: 'Josefin Sans');
+    }
+}

@@ -1,1 +1,88 @@
-<p>my-projects works!</p>
+<section>
+    <div>
+        <div class="headline">
+            <h3>{{ this.app.headline }}</h3>
+        </div>
+        <div class="container">
+
+            <!-- >> Container Nav -->
+            <div class="c-nav">
+                <ul>
+                    @for (item of app.projects; track item; let index = $index) {
+                    <li class="c-nav-list-item" [ngClass]="{'activ-nav-btn': index === currentProject}"
+                        (click)="this.setNextProject(index)">
+                        <button type="button">
+                            <span>{{ item.title }}</span>
+                        </button>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- >> Container Main -->
+            <div class="c-main" [ngClass]="{'activ-main': animate === 1}">
+            
+                <!-- >> Container Main Left -->
+                <div>
+                    <ul class="c-main-list">
+                        @for (item of app.projects[currentProject].description; track item) {
+                        <li>
+                            <figure class="c-main-list-item">
+                                <img src="img/main/list_item.svg" alt="list_item">
+                                <figcaption class="c-main-list-item-text">
+                                    <span>{{ item.headline }}
+                                        <span class="c-main-weeks">{{ item.weeks }}</span>
+                                    </span>
+                                    <p>{{ item.text }}</p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- >> Container Main Right -->
+                <div class="c-main-right">
+                
+                    <!-- >> Container Main Right Top -->
+                    <figure class="c-main-right-top">
+                        <div>
+                            @for (item of app.projects[currentProject].right_container.images;
+                            track item) {
+                            <img src="{{ item.path }}" alt="{{ item.title }}">
+                            }
+                        </div>
+                        <figcaption>
+                            <span>{{ this.app.right_headline
+                                }}</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- >> Container Main Right Bottom -->
+                    <figure class="c-main-right-bottom">
+                        @if (app.projects[currentProject].right_container.project_image) {
+                        <img src="{{ this.app.projects[currentProject].right_container.project_image }}"
+                            alt="project_image">
+                        } @else {
+                        <div class="comming-soon">
+                            <span>{{ this.app.project_image_text }}</span>
+                        </div>
+                        }
+                    
+                        <!-- >> Buttons: Live Test / Github -->
+                        <figcaption>
+                            @if (app.projects[currentProject].right_container.button_status) {
+                            @for (item of app.projects[currentProject].right_container.buttons;
+                            track item) {
+                            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                                <span>{{ item.text }}</span>
+                            </a>
+                            }
+                            }
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

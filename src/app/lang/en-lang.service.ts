@@ -11,14 +11,22 @@ export class EnLangService {
   public app = {
     'lang': 'en',
     'app': {
+
+      // >> App/Header
       'header': {
         'headline': 'Frontend Developer'
       },
+
+      // >> App/Navbar
       'navbar': {
         'menu': ['Why me', 'Skills', 'Projects', 'Contact']
       },
+
+      // >> App/Main
       'main': {
         'sections': {
+
+          // >> App/Main/Sections/WhyMe
           'why_me': {
             'headline': 'Why me',
             'left_container': {
@@ -28,10 +36,14 @@ export class EnLangService {
             'right_container': 'Why are you passionate about coding? You can include some key traits like: analytical thinking, creativity, persistence and collaboration. A problem-solving mindset is always nice to have.',
             'button': 'Lets talk'
           },
+
+          // >> App/Main/Sections/MySkills
           'mySkills': {
             'headline': 'My Skills',
+            // >> Left Contaienr
             'left_container': {
               'images': [
+                // >> Technologies Icons
                 {
                   'path': 'img/main/icons/technologies/angular.svg',
                   'title': 'Angular'
@@ -74,9 +86,11 @@ export class EnLangService {
                 }
               ]
             },
+            // >> Right Container
             'right_container': {
               'text_header': 'I am currently learning',
               'images': [
+                // >> Technologies Icons
                 {
                   'path': 'img/main/icons/technologies/react.svg',
                   'title': 'React'
@@ -88,6 +102,101 @@ export class EnLangService {
               ],
               'text_main': 'Show that you are motivated to continually improve your skills, implement innovative solutions and stay abreast of new technologies.'
             }
+          },
+
+          // >> App/Main/Sections/MyProjetcs
+          'myProjects': {
+            'headline': 'My Projects',
+            'projects': [
+              // >> Project Informations
+              {
+                'title': 'Sharkie',
+                'description': [
+                  // >> Left Container Text
+                  {
+                    'headline': 'About the project',
+                    'weeks': 'Duration: 5 weeks',
+                    'text': 'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.'
+                  },
+                  {
+                    'headline': 'How I have organised my work process',
+                    'weeks': '',
+                    'text': 'How do you keep your code clean and maintainable? Have you broken the project down into reusable modules or components? Focus on documentation, naming files, variables, classes and testing.'
+                  },
+                  {
+                    'headline': 'What I have learnt',
+                    'weeks': '',
+                    'text': 'As someone who is always trying to learn new technologies, you may have enjoyed working on this project because it allowed you to delve deep into a particular technology. Give details, such as the name of the framework or language you mean.'
+                  }
+                ],
+                // >> Right Container
+                'right_container': {
+                  'images': [
+                    // >> Technologies Icons
+                    {
+                      'path': 'img/main/icons/technologies/html.svg',
+                      'title': 'HTML'
+                    },
+                    {
+                      'path': 'img/main/icons/technologies/javaScript.svg',
+                      'title': 'JS'
+                    },
+                    {
+                      'path': 'img/main/icons/technologies/css.svg',
+                      'title': 'CSS'
+                    }
+                  ],
+                  'project_image': 'img/main/projects/sharkie.svg',
+                  'project_image_text': false,
+                  'button_status': true,
+                  'buttons': [
+                    {
+                      'text': 'Live Test',
+                      'url': '#'
+                    },
+                    {
+                      'text': 'GitHub',
+                      'url': ''
+                    }
+                  ]
+                }
+              },
+              {
+                'title': 'Ongoing Project',
+                'description': [
+                  // >> Left Container Text
+                  {
+                    'headline': 'About the project',
+                    'weeks': '',
+                    'text': 'What are you currently working on and what features are you implementing? What is the key to success in your projects?  You can mention good planning,  code quality and execution. Show a desire to learn new technologies and continually improve your skills.'
+                  }
+                ],
+                // >> Right Container
+                'right_container': {
+                  'images': [
+                    // >> Technologies Icons
+                    {
+                      'path': 'img/main/icons/technologies/html.svg',
+                      'title': 'HTML'
+                    },
+                    {
+                      'path': 'img/main/icons/technologies/javaScript.svg',
+                      'title': 'JS'
+                    },
+                    {
+                      'path': 'img/main/icons/technologies/css.svg',
+                      'title': 'CSS'
+                    }
+                  ],
+                  'project_image': '',
+                  'project_image_text': true,
+                  'button_status': false,
+                  'buttons': []
+                }
+              }
+            ],
+            'right_headline': 'Technologies',
+            'project_image_text': 'Comming soon'
           }
         }
       }

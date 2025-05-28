@@ -9,11 +9,8 @@ echo (Beende mit STRG+C)
 REM Starte VSCodium
 start ./portfolio.code-workspace
 
-REM Öffne Localhost
-start http://localhost:4200/
-
 REM Starte Dev Server
-call npm run dev-start
+call npm run dev-open
 
 echo.
 echo Anwendung wurde beendet oder abgebrochen.

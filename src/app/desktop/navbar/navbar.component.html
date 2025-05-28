@@ -1,11 +1,15 @@
 <section>
     <nav>
+
+        <!-- >> Left Container -->
         <div>
             <figure class="logo">
             <a href="#navHeader">
                 <img src="img/logos/logo_dark.svg" alt="logo_dark">
             </a>
         </figure>
+
+        <!-- Center Contaienr -->
         <div>
             <ul class="menu-list">
                 @for (item of this.app.navbar.menu; track item; let i = $index) {
@@ -17,6 +21,8 @@
                 }
             </ul>
         </div>
+
+        <!-- Right Container / Language Buttons -->
         <div class="change-language">
             @for (lang of this.getAllLanguages(); track lang) {
             <button type="button"

@@ -5,6 +5,7 @@
 section {
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 nav {
@@ -32,6 +33,7 @@ nav {
     }
 }
 
+// >> Nav Menu
 .menu-list {
     min-width: 800px;
 
@@ -40,7 +42,6 @@ nav {
 
 .menu-item {
     transition: all ease-in-out 125ms;
-    list-style: none;
     min-width: 140px;
     min-height: 31px;
     text-align: center;
@@ -64,6 +65,7 @@ nav {
     }
 }
 
+// >> Buttons
 .change-language {
     transition: all ease-in-out 125ms;
     width: 92px;

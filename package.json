@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dev-start": "ng serve",
-    "dev-open": "ng serve --open",
+    "dev-start": "ng serve --port 9002 --no-hmr",
+    "dev-open": "ng serve --port 9002 --open --no-hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

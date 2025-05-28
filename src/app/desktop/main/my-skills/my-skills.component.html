@@ -1,11 +1,15 @@
 <section>
     <div class="whyMe">
+
+        <!-- >> Headline Container -->
         <div class="headline">
-            <h3>{{ this.app.main.sections.mySkills.headline }}</h3>
+            <h3>{{ this.app.headline }}</h3>
         </div>
         <div class="container">
+
+            <!-- >> Left Container -->
             <div class="c-left">
-                @for (image of app.main.sections.mySkills.left_container.images; track image) {
+                @for (image of app.left_container.images; track image) {
                 <figure class="left-img-item">
                     <img src="{{ image.path }}" alt="{{ image.title }}">
                     <figcaption>
@@ -14,13 +18,17 @@
                 </figure>
                 }
             </div>
+
+            <!-- >> Right Container -->
             <div class="c-right">
                 <figure>
                     <img src="img/main/ellipse_dark.svg" alt="ellipse_dark">
                     <figcaption>
-                        <span>{{ this.app.main.sections.mySkills.right_container.text_header }}</span>
+                        <span>{{ this.app.right_container.text_header }}</span>
                         <div>
-                            @for (image of app.main.sections.mySkills.right_container.images; track image) {
+
+                            <!-- >> Images -->
+                            @for (image of app.right_container.images; track image) {
                             <figure class="right-img-item">
                                 <img src="{{ image.path }}" alt="{{ image.title }}">
                                 <figcaption>
@@ -29,7 +37,7 @@
                             </figure>
                             }
                         </div>
-                        <p>{{ this.app.main.sections.mySkills.right_container.text_main }}</p>
+                        <p>{{ this.app.right_container.text_main }}</p>
                     </figcaption>
                 </figure>
             </div>
