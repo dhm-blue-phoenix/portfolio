@@ -156,7 +156,7 @@ export class DeLangService {
                     },
                     {
                       'text': 'GitHub',
-                      'url': ''
+                      'url': '#'
                     }
                   ]
                 }
@@ -197,6 +197,56 @@ export class DeLangService {
             ],
             'right_headline': 'Technologien',
             'project_image_text': 'Comming soon',
+          },
+
+          // >> App/Main/Sections/Need_a_Teamplayer
+          'need_a_teamplayer': {
+            'headline': 'Brauchen Sie einen Teamplayer? Hier, was meine Kollegen über mich gesagt haben',
+            'infobox': [
+              // >> Infobox
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              },
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              },
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              }
+            ]
           }
         }
       }

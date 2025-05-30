@@ -1,11 +1,12 @@
 <section>
     <div>
+        <!-- >> Headline Container -->
         <div class="headline">
             <h3>{{ this.app.headline }}</h3>
         </div>
         <div class="container">
 
-            <!-- >> Container Nav -->
+            <!-- >> Nav Container -->
             <div class="c-nav">
                 <ul>
                     @for (item of app.projects; track item; let index = $index) {
@@ -19,10 +20,10 @@
                 </ul>
             </div>
 
-            <!-- >> Container Main -->
+            <!-- >> Main Container -->
             <div class="c-main" [ngClass]="{'activ-main': animate === 1}">
             
-                <!-- >> Container Main Left -->
+                <!-- >> Main Left Container -->
                 <div>
                     <ul class="c-main-list">
                         @for (item of app.projects[currentProject].description; track item) {
@@ -41,10 +42,10 @@
                     </ul>
                 </div>
 
-                <!-- >> Container Main Right -->
+                <!-- >> Main Right Container -->
                 <div class="c-main-right">
                 
-                    <!-- >> Container Main Right Top -->
+                    <!-- >> Main Right Top Container -->
                     <figure class="c-main-right-top">
                         <div>
                             @for (item of app.projects[currentProject].right_container.images;
@@ -58,7 +59,7 @@
                         </figcaption>
                     </figure>
 
-                    <!-- >> Container Main Right Bottom -->
+                    <!-- >> Main Right Bottom Container -->
                     <figure class="c-main-right-bottom">
                         @if (app.projects[currentProject].right_container.project_image) {
                         <img src="{{ this.app.projects[currentProject].right_container.project_image }}"

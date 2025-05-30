@@ -5,13 +5,17 @@
 section {
     width: calc(100vw - 20px);
     user-select: none;
+
+    >div {
+
+        @include flex($fd: column, $g: 64px);
+    }
 }
 
 .headline {
     user-select: text;
     text-align: center;
-    padding-bottom: 64px;
-
+    
     >h3 {
 
         @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');

@@ -197,6 +197,56 @@ export class EnLangService {
             ],
             'right_headline': 'Technologies',
             'project_image_text': 'Comming soon'
+          },
+
+          // >> App/Main/Sections/Need_a_Teamplayer
+          'need_a_teamplayer': {
+            'headline': 'Need a teamplayer? Here what my colleagues said about me',
+            'infobox': [
+              // >> Infobox
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              },
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              },
+              {
+                'header': {
+                  'headline': 'Sahra Mueller',
+                  'text': 'Project',
+                  'project_name': 'DA Bublle'
+                },
+                'main': {
+                 'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
+                },
+                'footer': {
+                  'link_text': 'Linked In Profile',
+                  'url': '#'
+                }
+              }
+            ]
           }
         }
       }

@@ -1,0 +1,92 @@
+@use '../../../../styles/global-colors' as *;
+@use '../../../../styles/global-fonts' as *;
+@use '../../../../styles/globle-mixin' as *;
+
+section {
+    
+    >div {
+
+        @include flex($fd: column, $g: 64px);
+    }
+}
+
+.headline {
+    text-align: center;
+    
+    >h3 {
+
+        @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Josefin Sans');
+    }
+}
+
+.c-main {
+    
+    @include flex($g: 16px);
+}
+
+
+// >> Main Infobox
+.infobox {
+    width: 400px;
+    height: 400px;
+    position: relative;
+
+    @include flex();
+
+    >img {
+        user-select: none;
+        position: absolute;
+
+        @include img($w: 400px, $h: 400px);
+    }
+
+    >figcaption {
+        max-width: 314px;
+        max-height: 250px;
+
+        @include flex($fd: column, $g: 19px);
+    }
+}
+
+.infobox-header {
+
+    @include flex($fd: column);
+
+    >span {
+
+        @include font($c: $main-color-white, $ff: 'Josefin Sans');
+
+        &:first-child {
+
+            @include font($fw: 600, $fs: 26px);
+        }
+
+        &:last-child {
+
+            @include font($fw: 400, $fs: 18px);
+        }
+
+        >span {
+            color: $main-color-lightblue;
+        }
+    }
+}
+
+.infobox-main {
+    text-align: center;
+
+    @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+}
+
+.infobox-footer {
+
+    >a {
+        text-decoration: underline;
+
+        @include font($main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
