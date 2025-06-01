@@ -65,6 +65,16 @@ nav {
     }
 }
 
+.activ-menu-item {
+    @include bg-img($bg-i: '../assets/img/change_language/ellipse.svg', $bg-s: contain);
+
+padding: 16px;
+
+    >span {
+        color: $main-color-white !important;
+    }
+}
+
 // >> Buttons
 .change-language {
     transition: all ease-in-out 125ms;

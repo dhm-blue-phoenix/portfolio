@@ -247,6 +247,25 @@ export class EnLangService {
                 }
               }
             ]
+          },
+
+          // >> App/Main/Sections/ContactMe
+          'contact_me': {
+            'headline': 'Contact me',
+            'info': {
+              // >> Contact Info
+              'description': 'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...',
+              'email': 'fohrer.developer@gmail.com',
+              'tel': '0157 123 456 68'
+            },
+            'form': {
+              // >> Contact Form
+              'name': 'Your name',
+              'email': 'Your Email',
+              'msg': 'Your Message'
+            },
+            'footer_text': ['Ive read the', 'privacy policy ', 'and agree to the processing of my data as outlined.'],
+            'btn_text': 'Send'
           }
         }
       }

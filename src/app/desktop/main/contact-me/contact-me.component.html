@@ -1,1 +1,90 @@
-<p>contact-me works!</p>
+<section>
+    <div>
+        <!-- >> Headline Container -->
+        <div class="headline">
+            <h3>{{ this.app.headline }}</h3>
+            
+            <!-- >> Nav Button To Header -->
+            <div class="header-nav-btn">
+                <figure>
+                    <hr>
+                    <a href="#navHeader">
+                        <img src="img/buttons/arrow_btn_down.svg" alt="arrow_down_button">
+                    </a>
+                </figure>
+            </div>
+        </div>
+
+        <!-- >> Main Container -->
+        <div class="c-main">
+
+            <!-- >> Main Contact Info -->
+            <div class="c-main-contact-info">
+                <p>{{ this.app.info.description }}</p>
+                <div class="contact-info">
+                    <a href="mailto:{{ this.app.info.email }}">
+                        <figure>
+                            <div>
+                                <img src="img/main/icons/email.svg" alt="email">
+                                <img src="img/main/icons/email_hover.svg" alt="email_hover">
+                            </div>
+                            <figcaption>
+                                <span>E-Mail:</span>
+                                <span>{{ this.app.info.email }}</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="mailto:{{ this.app.info.tel }}">
+                        <figure>
+                            <div>
+                                <img src="img/main/icons/phone.svg" alt="phone">
+                                <img src="img/main/icons/phone_hover.svg" alt="phone_hover">
+                            </div>
+                            <figcaption>
+                                <span>Tel:</span>
+                                <span>{{ this.app.info.tel }}</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+
+            <!-- >> Main Contact Formular -->
+            <div class="c-main-contact-form">
+                <form>
+                    <div class="contact-form">
+                        <label for="inputName">
+                            <span>{{ this.app.form.name }}</span>
+                            <input type="text" name="name" id="inputName">
+                        </label>
+                        <label for="inputEmail">
+                            <span>{{ this.app.form.email }}</span>
+                            <input type="text" name="email" id="inputEmail">
+                        </label>
+                    </div>
+                    <label for="textareaMessage">
+                        <span>{{ this.app.form.msg }}</span>
+                        <textarea name="message" id="textareaMessage"></textarea>
+                    </label>
+                </form>
+
+                <!-- >> Main Contact Footer -->
+                <div class="c-main-contact-footer">
+                    <figure>
+                        <img src="img/main/contact_list_item.svg" alt="contact_list_item">
+                        <figcaption>
+                            <span>{{ this.app.footer_text[0] }}</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer">{{ this.app.footer_text[1] }}</a>
+                            <span>{{ this.app.footer_text[2] }}</span>
+                        </figcaption>
+                    </figure>
+                    <div>
+                        <button type="button">
+                            <span>{{ this.app.btn_text }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

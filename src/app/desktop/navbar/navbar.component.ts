@@ -17,8 +17,9 @@ import { LanguageService } from '../../services/language.service';
 export class NavbarComponent implements OnInit {
   public navMenuRef: string[] = ['navWhy', 'navSkills', 'navProjects', 'navContact'];
   public app: any = {};
+  public activMenuItem: string = '';
 
-  constructor(private serviceLanguage: LanguageService) {}
+  constructor(private serviceLanguage: LanguageService) { }
 
   ngOnInit() {
     const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {
@@ -34,6 +35,17 @@ export class NavbarComponent implements OnInit {
    */
   public getAllLanguages(): string[] {
     return this.serviceLanguage.getAllLanguages();
+  }
+
+  /**
+   * Sets the active menu item by its ID and logs the selection.
+   * Updates the `activMenuItem` property to reflect the currently selected menu item.
+   *
+   * @param id - The ID of the menu item to activate.
+   */
+  public getMenuRef(id: string): void {
+    console.warn('LOG', id);
+    this.activMenuItem = id;
   }
 
   /**

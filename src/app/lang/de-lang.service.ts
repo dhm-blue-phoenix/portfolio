@@ -247,6 +247,25 @@ export class DeLangService {
                 }
               }
             ]
+          },
+
+          // >> App/Main/Sections/ContactMe
+          'contact_me': {
+            'headline': 'Kontaktieren Sie mich',
+            'info': {
+              // >> Contact Info
+              'description': 'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...',
+              'email': 'fohrer.developer@gmail.com',
+              'tel': '0157 123 456 68'
+            },
+            'form': {
+              // >> Contact Form
+              'name': 'Your name',
+              'email': 'Your Email',
+              'msg': 'Your Message'
+            },
+            'footer_text': ['Ich habe die gelesen', 'Datenschutzerklärung', 'und stimme der Verarbeitung meiner Daten wie skizziert zu.'],
+            'btn_text': 'Senden'
           }
         }
       }

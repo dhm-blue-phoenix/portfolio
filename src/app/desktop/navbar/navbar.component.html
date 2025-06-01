@@ -4,36 +4,36 @@
         <!-- >> Left Container -->
         <div>
             <figure class="logo">
-            <a href="#navHeader">
-                <img src="img/logos/logo_dark.svg" alt="logo_dark">
-            </a>
-        </figure>
+                <a href="#navHeader">
+                    <img src="img/logos/logo_dark.svg" alt="logo_dark">
+                </a>
+            </figure>
 
-        <!-- Center Contaienr -->
-        <div>
-            <ul class="menu-list">
-                @for (item of this.app.navbar.menu; track item; let i = $index) {
+            <!-- Center Contaienr -->
+            <div>
+                <ul class="menu-list">
+                    @for (item of this.app.navbar.menu; track item; let i = $index) {
                     <li class="menu-item">
-                        <a href="#{{ this.navMenuRef[i] }}">
+                        <a href="#{{ this.navMenuRef[i] }}" [id]="'menuItem' + i"
+                            [className]="this.activMenuItem == 'menuItem' + i && 'activ-menu-item'"
+                            (click)="this.getMenuRef('menuItem' + i)">
                             <span>{{ item }}</span>
                         </a>
                     </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Right Container / Language Buttons -->
+            <div class="change-language">
+                @for (lang of this.getAllLanguages(); track lang) {
+                <button type="button" (click)="this.changeLanguage(lang)" [disabled]="this.checkLanguage(lang)"
+                    [classList]="this.checkLanguage(lang) && 'activ-language'">
+
+                    <span>{{ lang }}</span>
+                </button>
                 }
-            </ul>
-        </div>
-
-        <!-- Right Container / Language Buttons -->
-        <div class="change-language">
-            @for (lang of this.getAllLanguages(); track lang) {
-            <button type="button"
-                (click)="this.changeLanguage(lang)"
-                [disabled]="this.checkLanguage(lang)"
-                [classList]="this.checkLanguage(lang) && 'activ-language'">
-
-                <span>{{ lang }}</span>
-            </button>
-            }
-        </div>
+            </div>
         </div>
     </nav>
 </section>
