@@ -1,0 +1,63 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+section {
+    width: 100%;
+    height: 214px;
+    background-color: $main-color-lightblue;
+
+    @include flex();
+}
+
+footer {
+    width: 1216px;
+    height: 100%;
+
+    @include flex($jc: space-between);
+}
+
+// >> Left Container
+.c-left {
+
+    @include flex($fd: column, $ai: flex-start, $g: 16px);
+    @include font($c: $main-color-lightblack, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+
+    >a {
+        color: $main-color-lightblack;
+
+        &:hover {
+            color: $main-color-white;
+        }
+    }
+}
+
+// >> Right Container
+.c-right-icon-bar {
+    height: 72px;
+
+    @include flex($g: 16px, $ai: flex-end);
+}
+
+.right-icon-bar-item {
+    position: relative;
+
+    >img {
+
+        @include img($w: 30px, $h: 30px);
+    }
+
+    >a {
+        opacity: 0;
+        position: absolute;
+        border-radius: 100%;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+    
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

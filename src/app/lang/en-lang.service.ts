@@ -268,6 +268,14 @@ export class EnLangService {
             'btn_text': 'Send'
           }
         }
+      },
+
+      // >> App/Footer
+      'footer': {
+        'left': {
+          'text_top': 'Legal notice',
+          'text_bottom': '© Claudia Fohrer 2024'
+        }
       }
     }
   };

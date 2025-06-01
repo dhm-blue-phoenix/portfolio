@@ -24,6 +24,7 @@ section {
 
 // >> Contact Header / Nav Btn To Header
 .header-nav-btn {
+    user-select: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -94,6 +95,7 @@ section {
                 position: relative;
 
                 >img {
+                    user-select: none;
 
                     @include img($w: 30px, $h: 30px);
 
@@ -163,6 +165,7 @@ section {
             @include flex($g: 4px, $fd: column, $jc: flex-start, $ai: flex-start);
 
             >span {
+                user-select: none;
                 padding-left: 32px;
 
                 @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
@@ -198,6 +201,7 @@ section {
         @include flex($g: 4px, $fd: column, $jc: flex-start, $ai: flex-start);
 
         >span {
+            user-select: none;
             padding-left: 32px;
 
             @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
@@ -232,6 +236,10 @@ section {
 
         @include flex($g: 4px, $jc: flex-start, $ai: flex-start);
 
+        >img {
+            user-select: none;
+        }
+
         >figcaption {
             height: 27px;
 
@@ -254,6 +262,7 @@ section {
         @include flex($ai: flex-end);
 
         >button {
+            user-select: none;
             width: 101px;
             height: 48px;
             filter: opacity(50%);

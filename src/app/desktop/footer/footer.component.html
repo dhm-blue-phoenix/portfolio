@@ -1,1 +1,37 @@
-<p>footer works!</p>
+<section>
+    <footer>
+        <!-- Left Container -->
+        <div class="c-left">
+            <a href="#">{{ this.app.footer.left.text_top }}</a>
+            <span>{{ this.app.footer.left.text_bottom }}</span>
+        </div>
+
+        <!-- >> Main Container Logo -->
+        <figure>
+            <img src="img/logos/logo_dark.svg" alt="logo">
+        </figure>
+
+        <!-- >> Right Container Icon Bar -->
+        <div class="c-right-icon-bar">
+            <figure class="right-icon-bar-item">
+                <img src="img/logos/footer/email_logo.svg" alt="email_logo">
+                <a href="#navContact" (click)="this.setActiveMenuItem('menuItem3')">
+                    <img src="img/logos/footer/email_logo_hover.svg" alt="email_logo_hover">
+                </a>
+            </figure>
+            <figure class="right-icon-bar-item">
+                <img src="img/logos/footer/github_logo.svg" alt="github_logo">
+                <a href="https://github.com/dhm-blue-phoenix/portfolio.git" target="_blank" rel="noopener noreferrer">
+                    <img src="img/logos/footer/github_logo_hover.svg" alt="github_logo_hover">
+                </a>
+            </figure>
+            <figure class="right-icon-bar-item">
+                <img src="img/logos/footer/linkedin_logo.svg" alt="linkedin_logo">
+                <!-- No Link Ref -->
+                <a href="#">
+                    <img src="img/logos/footer/linkedin_logo_hover.svg" alt="linkedin_logo_hover">
+                </a>
+            </figure>
+        </div>
+    </footer>
+</section>

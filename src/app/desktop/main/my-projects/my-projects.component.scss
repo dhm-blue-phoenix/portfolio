@@ -15,7 +15,7 @@ section {
 .headline {
     user-select: text;
     text-align: center;
-    
+
     >h3 {
 
         @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
@@ -29,9 +29,13 @@ section {
 
 // >> Nav Container
 .c-nav {
-    margin-left: 102px;
+    width:  calc(100vw - 20px);
+
+    @include flex();
 
     >ul {
+        max-width: 1199px;
+        width: 1199px;
         display: flex;
     }
 }
@@ -70,11 +74,19 @@ section {
     }
 }
 
+.c-main-back {
+    background-color: $main-color-lightblack;
+    width:  calc(100vw - 20px);
+    height: 548px;
+
+    @include flex();
+}
+
 .c-main {
     background-color: $main-color-lightblack;
+    max-width: 1199px;
     max-height: 548px;
-    height: 548px;
-    padding: 32px;
+    padding: 32px 0;
 
     @include flex($g: 32px, $jc: flex-start, $ai: flex-start);
 }
@@ -96,7 +108,6 @@ section {
 
 // >> Main Left Container
 .c-main-list {
-    margin-left: 102px;
     width: 690px;
     height: 93;
 

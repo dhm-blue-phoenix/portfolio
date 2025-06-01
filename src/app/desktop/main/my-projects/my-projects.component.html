@@ -21,67 +21,69 @@
             </div>
 
             <!-- >> Main Container -->
-            <div class="c-main" [ngClass]="{'activ-main': animate === 1}">
-            
-                <!-- >> Main Left Container -->
-                <div>
-                    <ul class="c-main-list">
-                        @for (item of app.projects[currentProject].description; track item) {
-                        <li>
-                            <figure class="c-main-list-item">
-                                <img src="img/main/list_item.svg" alt="list_item">
-                                <figcaption class="c-main-list-item-text">
-                                    <span>{{ item.headline }}
-                                        <span class="c-main-weeks">{{ item.weeks }}</span>
-                                    </span>
-                                    <p>{{ item.text }}</p>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        }
-                    </ul>
-                </div>
+            <div class="c-main-back">
+                <div class="c-main" [ngClass]="{'activ-main': animate === 1}">
 
-                <!-- >> Main Right Container -->
-                <div class="c-main-right">
-                
-                    <!-- >> Main Right Top Container -->
-                    <figure class="c-main-right-top">
-                        <div>
-                            @for (item of app.projects[currentProject].right_container.images;
-                            track item) {
-                            <img src="{{ item.path }}" alt="{{ item.title }}">
+                    <!-- >> Main Left Container -->
+                    <div>
+                        <ul class="c-main-list">
+                            @for (item of app.projects[currentProject].description; track item) {
+                            <li>
+                                <figure class="c-main-list-item">
+                                    <img src="img/main/list_item.svg" alt="list_item">
+                                    <figcaption class="c-main-list-item-text">
+                                        <span>{{ item.headline }}
+                                            <span class="c-main-weeks">{{ item.weeks }}</span>
+                                        </span>
+                                        <p>{{ item.text }}</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
                             }
-                        </div>
-                        <figcaption>
-                            <span>{{ this.app.right_headline
-                                }}</span>
-                        </figcaption>
-                    </figure>
+                        </ul>
+                    </div>
 
-                    <!-- >> Main Right Bottom Container -->
-                    <figure class="c-main-right-bottom">
-                        @if (app.projects[currentProject].right_container.project_image) {
-                        <img src="{{ this.app.projects[currentProject].right_container.project_image }}"
-                            alt="project_image">
-                        } @else {
-                        <div class="comming-soon">
-                            <span>{{ this.app.project_image_text }}</span>
-                        </div>
-                        }
-                    
-                        <!-- >> Buttons: Live Test / Github -->
-                        <figcaption>
-                            @if (app.projects[currentProject].right_container.button_status) {
-                            @for (item of app.projects[currentProject].right_container.buttons;
-                            track item) {
-                            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-                                <span>{{ item.text }}</span>
-                            </a>
+                    <!-- >> Main Right Container -->
+                    <div class="c-main-right">
+
+                        <!-- >> Main Right Top Container -->
+                        <figure class="c-main-right-top">
+                            <div>
+                                @for (item of app.projects[currentProject].right_container.images;
+                                track item) {
+                                <img src="{{ item.path }}" alt="{{ item.title }}">
+                                }
+                            </div>
+                            <figcaption>
+                                <span>{{ this.app.right_headline
+                                    }}</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- >> Main Right Bottom Container -->
+                        <figure class="c-main-right-bottom">
+                            @if (app.projects[currentProject].right_container.project_image) {
+                            <img src="{{ this.app.projects[currentProject].right_container.project_image }}"
+                                alt="project_image">
+                            } @else {
+                            <div class="comming-soon">
+                                <span>{{ this.app.project_image_text }}</span>
+                            </div>
                             }
-                            }
-                        </figcaption>
-                    </figure>
+
+                            <!-- >> Buttons: Live Test / Github -->
+                            <figcaption>
+                                @if (app.projects[currentProject].right_container.button_status) {
+                                @for (item of app.projects[currentProject].right_container.buttons;
+                                track item) {
+                                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                                    <span>{{ item.text }}</span>
+                                </a>
+                                }
+                                }
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>

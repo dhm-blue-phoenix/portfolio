@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 // Import Services
 import { LanguageService } from '../../services/language.service';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,13 +20,17 @@ export class NavbarComponent implements OnInit {
   public app: any = {};
   public activMenuItem: string = '';
 
-  constructor(private serviceLanguage: LanguageService) { }
+  constructor(private serviceLanguage: LanguageService, private navbarService: NavbarService) { }
 
   ngOnInit() {
     const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {
       this.app = this.serviceLanguage.getLanguageForAppUi(lang);
     });
+    const subscriptionMenu = this.navbarService.activeMenuItem$.subscribe(id => {
+      this.activMenuItem = id;
+    });
     this.serviceLanguage.registerSubscription(subscription);
+    this.serviceLanguage.registerSubscription(subscriptionMenu);
   }
 
   /**
@@ -43,9 +48,8 @@ export class NavbarComponent implements OnInit {
    *
    * @param id - The ID of the menu item to activate.
    */
-  public getMenuRef(id: string): void {
-    console.warn('LOG', id);
-    this.activMenuItem = id;
+  public setMenuRef(id: string): void {
+    this.navbarService.setActiveMenuItem(id);
   }
 
   /**

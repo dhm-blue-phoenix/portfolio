@@ -268,6 +268,14 @@ export class DeLangService {
             'btn_text': 'Senden'
           }
         }
+      },
+
+      // >> App/Footer
+      'footer': {
+        'left': {
+          'text_top': 'Rechtlicher Hinweis',
+          'text_bottom': '© Claudia Fohrer 2024'
+        }
       }
     }
   };
