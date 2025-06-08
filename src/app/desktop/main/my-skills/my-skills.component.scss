@@ -2,112 +2,115 @@
 @use '../../../../styles/global-fonts' as *;
 @use '../../../../styles/globle-mixin' as *;
 
-section {
-    user-select: none;
-
-    @include flex();
-}
-
-.whyMe {
-    width: 980px;
-    max-width: 980px;
-
-    @include flex($fd: column, $g: 64px);
-}
-
-.headline {
-    flex: 1;
-
-    >h3 {
-        user-select: text;
-
-        @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
-    }
-}
-
-.container {
-    flex: 1;
-    min-width: 429px;
-
-    @include flex($ai: flex-start, $g: 64px);
-}
-
-// >> Left Container
-.c-left {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.left-img-item {
-    width: 80px;
-
-    @include flex($fd: column, $g: 10px);
-
-    >img {
-
-        @include img($w: 55.8px, $of: contain);
-    }
-
-    >figcaption {
-        text-align: center;
-
-        >span {
-            word-wrap: break-word;
-
-            @include font($fw: 400, $fs: 18px, $c: $main-color-lightblue, $ff: 'Josefin Sans');
-        }
-    }
-}
-
-// >> Right Container
-.c-right {
-    flex: 1;
-
-    >figure {
-        position: relative;
-        width: 380px;
-        height: 380px;
-        max-width: 380px;
-        max-height: 380px;
+// >> Desktop Design << \\
+@media (min-width: 1440px) {
+    section {
+        user-select: none;
 
         @include flex();
+    }
 
-        >figcaption {
-            position: absolute;
-            top: 0;
-            width: 307px;
-            height: 100%;
-            text-align: center;
+    .whyMe {
+        width: 980px;
+        max-width: 980px;
+
+        @include flex($fd: column, $g: 64px);
+    }
+
+    .headline {
+        flex: 1;
+
+        >h3 {
             user-select: text;
 
-            @include flex($fd: column, $g: 20px);
-            @include font($fw: 400, $fs: 18px, $c: $main-color-white, $ff: 'Josefin Sans');
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+        }
+    }
 
-            >div {
+    .container {
+        flex: 1;
+        min-width: 429px;
 
-                @include flex($g: 24px);
+        @include flex($ai: flex-start, $g: 64px);
+    }
+
+    // >> Left Container
+    .c-left {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .left-img-item {
+        width: 80px;
+
+        @include flex($fd: column, $g: 10px);
+
+        >img {
+
+            @include img($w: 55.8px, $of: contain);
+        }
+
+        >figcaption {
+            text-align: center;
+
+            >span {
+                word-wrap: break-word;
+
+                @include font($fw: 400, $fs: 18px, $c: $main-color-lightblue, $ff: 'Josefin Sans');
             }
         }
     }
-}
 
-.right-img-item {
-    user-select: none;
+    // >> Right Container
+    .c-right {
+        flex: 1;
 
-    @include flex($fd: column, $g: 5px);
+        >figure {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            max-width: 380px;
+            max-height: 380px;
 
-    >img {
+            @include flex();
 
-        @include img($w: 32px, $h: 32px, $of: contain);
+            >figcaption {
+                position: absolute;
+                top: 0;
+                width: 307px;
+                height: 100%;
+                text-align: center;
+                user-select: text;
+
+                @include flex($fd: column, $g: 20px);
+                @include font($fw: 400, $fs: 18px, $c: $main-color-white, $ff: 'Josefin Sans');
+
+                >div {
+
+                    @include flex($g: 24px);
+                }
+            }
+        }
     }
 
-    >figcaption {
+    .right-img-item {
+        user-select: none;
 
-        >span {
+        @include flex($fd: column, $g: 5px);
 
-            @include font($fs: 14px);
+        >img {
+
+            @include img($w: 32px, $h: 32px, $of: contain);
+        }
+
+        >figcaption {
+
+            >span {
+
+                @include font($fs: 14px);
+            }
         }
     }
 }

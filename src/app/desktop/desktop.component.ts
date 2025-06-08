@@ -20,7 +20,10 @@ import { FooterComponent} from './footer/footer.component';
     FooterComponent
   ],
   templateUrl: './desktop.component.html',
-  styleUrl: './desktop.component.scss'
+  styleUrls: [
+    '../response/mobile/mobile.scss',
+    './desktop.component.scss'
+  ]
 })
 
 export class DesktopComponent {}

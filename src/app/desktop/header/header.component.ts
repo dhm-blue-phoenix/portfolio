@@ -12,7 +12,10 @@ import { NavbarService } from '../../services/navbar.service';
     CommonModule
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: [
+    '../../response/mobile/header.scss',
+    './header.component.scss'
+  ]
 })
 
 export class HeaderComponent implements OnInit {

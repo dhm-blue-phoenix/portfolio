@@ -1,0 +1,106 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+@media (max-width: 1440px) {
+    section {
+        padding: 32px;
+        user-select: none;
+    }
+
+    nav {
+
+        @include flex($jc: space-between, $ai: flex-start);
+    }
+
+    .logo {
+        >a {
+            >img {
+
+                @include img($w: 58px, $h: 72px, $of: contain);
+
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .menu-list,
+    .change-language {
+        display: none !important;
+    }
+
+    .mobile {
+        width: 100%;
+
+        @include flex($jc: flex-end);
+
+        >div:last-child {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: calc(100vw - $scrollbar-w);
+            height: 100vh;
+
+            @include flex();
+        }
+    }
+
+    // >> Nav Menu
+    .mobile-menu {
+        z-index: 1;
+        width: 30px;
+        height: 32px;
+        max-width: 30px;
+        max-height: 32px;
+
+
+        @include bg-img($bg-i: '../assets/img/menu_icon.svg', $bg-s: contain);
+    }
+
+    .mobile-nav {
+        opacity: 1;
+        position: relative;
+        width: 353.16px;
+        height: 370px;
+
+        @include flex();
+
+        >img {
+
+            @include img($w: 353.16px, $h: 370px);
+        }
+
+        >figcaption {
+            position: absolute;
+            width: 93px;
+            height: 280px;
+
+            @include flex($fd: column, $g: 40px);
+        }
+    }
+
+    .disable-mobile-nav {
+        transition: all ease-in-out 125ms;
+        opacity: 0;
+    }
+
+    .mobile-menu-list {
+
+        @include flex($fd: column, $g: 40px);
+    }
+
+    .mobile-menu-item {
+        >a {
+
+            @include font($c: $main-color-black, $fs: 22px, $fw: 400, $ff: 'Josefin Sans');
+        }
+    }
+
+    .activ-menu-item {
+        > span {
+            color: $main-color-white !important;
+        }
+    }
+}

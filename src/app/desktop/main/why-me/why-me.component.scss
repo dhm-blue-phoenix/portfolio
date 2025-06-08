@@ -2,94 +2,97 @@
 @use '../../../../styles/global-fonts' as *;
 @use '../../../../styles/globle-mixin' as *;
 
-section {
-    user-select: none;
+// >> Desktop Design << \\
+@media (min-width: 1440px) {
+    section {
+        user-select: none;
 
-    @include flex();
-}
-
-.whyMe {
-    width: 980px;
-    max-width: 980px;
-
-    @include flex($fd: column, $g: 64px);
-}
-
-.headline {
-    flex: 1;
-
-    >h3 {
-        user-select: text;
-
-        @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+        @include flex();
     }
-}
 
-.container {
-    flex: 1;
-    min-width: 429px;
+    .whyMe {
+        width: 980px;
+        max-width: 980px;
 
-    @include flex($ai: flex-start, $g: 64px);
-}
+        @include flex($fd: column, $g: 64px);
+    }
 
-// >> Left Container
-.c-left {
-    flex: 1;
+    .headline {
+        flex: 1;
 
-    @include flex($g: 8px);
-
-    >figcaption {
-
-        >img {
-
-            @include img($w: 74px, $h: 63px);
-        }
-
-        >span {
+        >h3 {
             user-select: text;
 
-            @include font($c: $main-color-white, $fw: 700, $fs: 30px, $ff: 'Josefin Sans');
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+        }
+    }
+
+    .container {
+        flex: 1;
+        min-width: 429px;
+
+        @include flex($ai: flex-start, $g: 64px);
+    }
+
+    // >> Left Container
+    .c-left {
+        flex: 1;
+
+        @include flex($g: 8px);
+
+        >figcaption {
+
+            >img {
+
+                @include img($w: 74px, $h: 63px);
+            }
 
             >span {
-                color: $main-color-lightblue;
+                user-select: text;
+
+                @include font($c: $main-color-white, $fw: 700, $fs: 30px, $ff: 'Josefin Sans');
+
+                >span {
+                    color: $main-color-lightblue;
+                }
             }
         }
     }
-}
 
-// >> Right Container
-.c-right {
-    flex: 1;
-    height: 100%;
+    // >> Right Container
+    .c-right {
+        flex: 1;
+        height: 100%;
 
-    @include flex($fd: column, $jc: space-between, $ai: flex-end);
+        @include flex($fd: column, $jc: space-between, $ai: flex-end);
 
-    >p {
-        user-select: text;
+        >p {
+            user-select: text;
 
-        @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
-    }
+            @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+        }
 
-    >div {
+        >div {
 
-        @include flex($jc: flex-end);
+            @include flex($jc: flex-end);
 
-        >a {
-            min-width: 134px;
-            min-height: 48px;
+            >a {
+                min-width: 134px;
+                min-height: 48px;
 
-            @include flex();
-            @include border($br: 30px, $bs: solid, $bw: 1px, $bc: $main-color-lightblue);
+                @include flex();
+                @include border($br: 30px, $bs: solid, $bw: 1px, $bc: $main-color-lightblue);
 
-            >span {
+                >span {
 
-                @include font($fw: 400, $fs: 18px, $ff: 'Josefin Sans', $c: $main-color-lightblue);
-            }
+                    @include font($fw: 400, $fs: 18px, $ff: 'Josefin Sans', $c: $main-color-lightblue);
+                }
 
 
-            &:hover {
-                cursor: pointer;
-                background-color: $main-color-white-hover;
+                &:hover {
+                    cursor: pointer;
+                    background-color: $main-color-white-hover;
+                }
             }
         }
     }

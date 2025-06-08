@@ -2,91 +2,94 @@
 @use '../../../../styles/global-fonts' as *;
 @use '../../../../styles/globle-mixin' as *;
 
-section {
-    
-    >div {
+// >> Desktop Design << \\
+@media (min-width: 1440px) {
+    section {
 
-        @include flex($fd: column, $g: 64px);
-    }
-}
+        >div {
 
-.headline {
-    text-align: center;
-    
-    >h3 {
-
-        @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Josefin Sans');
-    }
-}
-
-.c-main {
-    
-    @include flex($g: 16px);
-}
-
-
-// >> Main Infobox
-.infobox {
-    width: 400px;
-    height: 400px;
-    position: relative;
-
-    @include flex();
-
-    >img {
-        user-select: none;
-        position: absolute;
-
-        @include img($w: 400px, $h: 400px);
+            @include flex($fd: column, $g: 64px);
+        }
     }
 
-    >figcaption {
-        max-width: 314px;
-        max-height: 250px;
+    .headline {
+        text-align: center;
 
-        @include flex($fd: column, $g: 19px);
+        >h3 {
+
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Josefin Sans');
+        }
     }
-}
 
-.infobox-header {
+    .c-main {
 
-    @include flex($fd: column);
+        @include flex($g: 16px);
+    }
 
-    >span {
 
-        @include font($c: $main-color-white, $ff: 'Josefin Sans');
+    // >> Main Infobox
+    .infobox {
+        width: 400px;
+        height: 400px;
+        position: relative;
 
-        &:first-child {
+        @include flex();
 
-            @include font($fw: 600, $fs: 26px);
+        >img {
+            user-select: none;
+            position: absolute;
+
+            @include img($w: 400px, $h: 400px);
         }
 
-        &:last-child {
+        >figcaption {
+            max-width: 314px;
+            max-height: 250px;
 
-            @include font($fw: 400, $fs: 18px);
+            @include flex($fd: column, $g: 19px);
         }
+    }
+
+    .infobox-header {
+
+        @include flex($fd: column);
 
         >span {
-            color: $main-color-lightblue;
+
+            @include font($c: $main-color-white, $ff: 'Josefin Sans');
+
+            &:first-child {
+
+                @include font($fw: 600, $fs: 26px);
+            }
+
+            &:last-child {
+
+                @include font($fw: 400, $fs: 18px);
+            }
+
+            >span {
+                color: $main-color-lightblue;
+            }
         }
     }
-}
 
-.infobox-main {
-    text-align: center;
+    .infobox-main {
+        text-align: center;
 
-    @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
-}
+        @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+    }
 
-.infobox-footer {
+    .infobox-footer {
 
-    >a {
-        text-decoration: underline;
+        >a {
+            text-decoration: underline;
 
-        @include font($main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
+            @include font($main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
 
-        &:hover {
-            cursor: pointer;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

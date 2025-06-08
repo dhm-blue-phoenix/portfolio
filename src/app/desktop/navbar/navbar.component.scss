@@ -1,81 +1,101 @@
-@use '../../../styles/global-colors' as *;
-@use '../../../styles/global-fonts' as *;
-@use '../../../styles/globle-mixin' as *;
+@use "../../../styles/global-colors" as *;
+@use "../../../styles/global-fonts" as *;
+@use "../../../styles/globle-mixin" as *;
 
-section {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    user-select: none;
-    background-color: $main-color-lightblue;
-    max-height: 104px;
-    height: 104px;
-
-    @include flex();
-
-    >div {
-        max-width: 1440px;
-        width: 1440px;
-
-        @include flex($jc: space-around);
+// >> Desktop Design << \\
+@media (min-width: 1440px) {
+    section {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
     }
-}
 
-.logo {
-    cursor: pointer;
+    nav {
+        user-select: none;
+        background-color: $main-color-lightblue;
+        max-height: 104px;
+        height: 104px;
 
-    >img {
+        @include flex();
 
-        @include img($w: 58px, $h: 72px, $of: cover);
-    }
-}
+        > div {
+            max-width: 1440px;
+            width: 1440px;
 
-// >> Nav Menu
-.menu-list {
-    min-width: 800px;
+            @include flex($jc: space-around);
 
-    @include flex($g: 110px);
-}
-
-.menu-item {
-    transition: all ease-in-out 125ms;
-    min-width: 140px;
-    min-height: 31px;
-    text-align: center;
-
-    @include flex();
-
-    >a {
-        >span {
-            user-select: none;
-
-            @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 500, $fs: 26px);
-        }
-
-        &:hover {
-            cursor: pointer;
-
-            >span {
-                color: $main-color-white;
+            &:last-child {
+                display: none;
             }
         }
     }
-}
 
-.activ-menu-item {
-    @include bg-img($bg-i: '../assets/img/change_language/ellipse.svg', $bg-s: contain);
+    .logo {
+        cursor: pointer;
 
-padding: 16px;
+        > a {
+            > img {
+                
+                @include img($w: 58px, $h: 72px, $of: cover);
 
-    >span {
-        color: $main-color-white !important;
+                &:first-child {
+                    display: block;
+                }
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
     }
+
+    // >> Nav Menu
+    .menu-list {
+        min-width: 800px;
+
+        @include flex($g: 110px);
+    }
+
+    .menu-item {
+        transition: all ease-in-out 125ms;
+        min-width: 170px;
+        min-height: 31px;
+        text-align: center;
+
+        @include flex();
+
+        > a {
+            > span {
+                user-select: none;
+
+                @include font($c: $main-color-black, $ff: "Josefin Sans", $fw: 500, $fs: 26px);
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                > span {
+                    color: $main-color-white;
+                }
+            }
+        }
+    }
+
+    .activ-menu-item {
+        @include bg-img($bg-i: "../assets/img/change_language/ellipse.svg", $bg-s: contain);
+
+        padding: 16px;
+
+        > span {
+            color: $main-color-white !important;
+        }
+    }
+
 }
 
 // >> Buttons
+.mobile-change-language,
 .change-language {
     transition: all ease-in-out 125ms;
     width: 92px;
@@ -83,20 +103,20 @@ padding: 16px;
 
     @include flex($jc: space-around);
 
-    >button {
+    > button {
         width: 36.8px;
         height: 24px;
 
-        >span {
+        > span {
             text-transform: uppercase;
 
-            @include font($c: $main-color-black, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+            @include font($c: $main-color-black, $ff: "Josefin Sans", $fw: 400, $fs: 18px);
         }
 
         &:hover {
             cursor: pointer;
 
-            >span {
+            > span {
                 color: $main-color-white;
             }
         }
@@ -106,9 +126,9 @@ padding: 16px;
 .activ-language {
     cursor: default !important;
 
-    @include bg-img($bg-i: '../assets/img/change_language/ellipse.svg');
+    @include bg-img($bg-i: "../assets/img/change_language/ellipse.svg");
 
-    >span {
+    > span {
         color: $main-color-white !important;
     }
 }

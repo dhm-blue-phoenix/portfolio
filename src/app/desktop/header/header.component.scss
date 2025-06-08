@@ -2,193 +2,196 @@
 @use '../../../styles/global-fonts' as *;
 @use '../../../styles/globle-mixin' as *;
 
-section {
-    user-select: none;
-    min-height: calc(100vh - 104px);
+// >> Desktop Design << \\
+@media (min-width: 1440px) {
+    section {
+        user-select: none;
+        min-height: calc(100vh - 104px);
 
-    @include flex($ai: flex-end);
-}
+        @include flex($ai: flex-end);
+    }
 
-header {
-    max-width: 1214px;
-    max-height: 705px;
-    width: 100%;
-    height: 705px;
-    display: flex;
-}
+    header {
+        max-width: 1214px;
+        max-height: 705px;
+        width: 100%;
+        height: 705px;
+        display: flex;
+    }
 
 
-.header-left,
-.header-right {
-    flex: 1;
-}
+    .header-left,
+    .header-right {
+        flex: 1;
+    }
 
-// >> Header Left Container
-.header-left {
-    display: flex;
-    align-items: flex-end;
-
-    >figure {
-        position: relative;
+    // >> Header Left Container
+    .header-left {
         display: flex;
         align-items: flex-end;
 
-        >img {
-            z-index: 1;
-
-            @include img($w: 535px, $h: 683px);
-
-            &:hover {
-
-                &:hover~.left-img-bg {
-                    opacity: 0;
-                }
-
-                &:hover~.left-img-bg-hover {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-}
-
-.left-img-bg,
-.left-img-bg-hover {
-    position: absolute;
-    transform: rotate(241deg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 580px;
-    height: 616px;
-    transition: opacity 325ms ease-in-out;
-    z-index: 0;
-}
-
-.left-img-bg {
-    opacity: 1;
-    background-image: url('../../../assets/img/header/ellipseDefault.svg');
-}
-
-.left-img-bg-hover {
-    background-image: url('../../../assets/img/header/ellipseHover.svg');
-    opacity: 0;
-}
-
-// >> Header Right Container
-.header-right {
-
-    >div {
-        height: 100%;
-
-        @include flex($jc: space-around, $ai: normal, $fd: column);
-    }
-}
-
-.right-logo {
-    flex: 1;
-    position: relative;
-
-    >figure {
-
-        >hr {
-            opacity: 0;
-        }
-
-        &:first-child {
-            height: 100%;
-
-            @include flex($jc: space-evenly, $fd: column);
+        >figure {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
 
             >img {
-                
-                @include img($w: 66px, $h: 73px);
+                z-index: 1;
+
+                @include img($w: 535px, $h: 683px);
+
+                &:hover {
+
+                    &:hover~.left-img-bg {
+                        opacity: 0;
+                    }
+
+                    &:hover~.left-img-bg-hover {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
-}
 
-.right-icon-bar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-
-    @include flex();
-
-    >div {
-        height: 122px;
-
-        @include flex($jc: space-between, $fd: column);
-    }
-}
-
-.right-icon-bar-item {
-    position: relative;
-
-    >img {
-
-        @include img($w: 30px, $h: 30px);
-    }
-
-    >a {
-        opacity: 0;
+    .left-img-bg,
+    .left-img-bg-hover {
         position: absolute;
-        border-radius: 100%;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 30px;
-    
-        &:hover {
-            opacity: 1;
+        transform: rotate(241deg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 580px;
+        height: 616px;
+        transition: opacity 325ms ease-in-out;
+        z-index: 0;
+    }
+
+    .left-img-bg {
+        opacity: 1;
+        background-image: url('../../../assets/img/header/ellipseDefault.svg');
+    }
+
+    .left-img-bg-hover {
+        background-image: url('../../../assets/img/header/ellipseHover.svg');
+        opacity: 0;
+    }
+
+    // >> Header Right Container
+    .header-right {
+
+        >div {
+            height: 100%;
+
+            @include flex($jc: space-around, $ai: normal, $fd: column);
         }
     }
-}
 
-.right-headline {
-    flex: 1;
-    text-align: center;
-    color: $main-color-white;
-    user-select: text;
+    .right-logo {
+        flex: 1;
+        position: relative;
 
-    >h1 {
+        >figure {
 
-        @include font($fw: 400, $fs: 80px, $ff: 'Anta');
+            >hr {
+                opacity: 0;
+            }
+
+            &:first-child {
+                height: 100%;
+
+                @include flex($jc: space-evenly, $fd: column);
+
+                >img {
+
+                    @include img($w: 66px, $h: 73px);
+                }
+            }
+        }
     }
 
-    >h2 {
-        text-transform: uppercase;
-
-        @include font($fw: 400, $fs: 40px, $ff: 'Josefin Sans');
-    }
-}
-
-.right-btn {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    
-    >figure {
+    .right-icon-bar {
+        position: absolute;
+        top: 0;
+        right: 0;
         height: 100%;
 
-        @include flex($jc: space-evenly, $fd: column-reverse);
+        @include flex();
 
-        >hr {
-            opacity: 0;
+        >div {
+            height: 122px;
+
+            @include flex($jc: space-between, $fd: column);
+        }
+    }
+
+    .right-icon-bar-item {
+        position: relative;
+
+        >img {
+
+            @include img($w: 30px, $h: 30px);
         }
 
         >a {
-            transition: all ease-in-out 125ms;
-            border-radius: 30px;
-            height: 89px;
+            opacity: 0;
+            position: absolute;
+            border-radius: 100%;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
 
             &:hover {
-                background-color: $main-color-white-hover;
+                opacity: 1;
+            }
+        }
+    }
+
+    .right-headline {
+        flex: 1;
+        text-align: center;
+        color: $main-color-white;
+        user-select: text;
+
+        >h1 {
+
+            @include font($fw: 400, $fs: 80px, $ff: 'Anta');
+        }
+
+        >h2 {
+            text-transform: uppercase;
+
+            @include font($fw: 400, $fs: 40px, $ff: 'Josefin Sans');
+        }
+    }
+
+    .right-btn {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        >figure {
+            height: 100%;
+
+            @include flex($jc: space-evenly, $fd: column-reverse);
+
+            >hr {
+                opacity: 0;
             }
 
-            >img {
+            >a {
+                transition: all ease-in-out 125ms;
+                border-radius: 30px;
+                height: 89px;
 
-                @include img($w: 38px, $h: 89px);
+                &:hover {
+                    background-color: $main-color-white-hover;
+                }
+
+                >img {
+
+                    @include img($w: 38px, $h: 89px);
+                }
             }
         }
     }

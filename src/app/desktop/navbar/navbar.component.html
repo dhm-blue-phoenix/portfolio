@@ -5,10 +5,11 @@
             <figure class="logo">
                 <a href="#navHeader" (click)="this.setMenuRef('')">
                     <img src="img/logos/logo_dark.svg" alt="logo_dark">
+                    <img src="img/logos/logo.svg" alt="logo">
                 </a>
             </figure>
 
-            <!-- Center Contaienr -->
+            <!-- Menu List Contaienr -->
             <div>
                 <ul class="menu-list">
                     @for (item of this.app.navbar.menu; track item; let i = $index) {
@@ -32,6 +33,45 @@
                     <span>{{ lang }}</span>
                 </button>
                 }
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile">
+            <div class="mobile-menu" (click)="this.setDisableMobileMenu()"></div>
+            <div>
+                <figure class="mobile-nav" [ngClass]="{'disable-mobile-nav': this.disableMobileMenu}">
+                    <figcaption>
+
+                        <!-- Menu List Contaienr -->
+                        <div>
+                            <ul class="mobile-menu-list">
+                                @for (item of this.app.navbar.menu; track item; let i = $index) {
+                                <li class="mobile-menu-item">
+                                    <a href="#{{ this.navMenuRef[i] }}" [id]="'menuItem' + i"
+                                        [className]="this.activMenuItem == 'menuItem' + i && 'activ-menu-item'"
+                                        (click)="this.setMenuRef('menuItem' + i)">
+                                        <span>{{ item }}</span>
+                                    </a>
+                                </li>
+                                }
+                            </ul>
+                        </div>
+
+                        <!-- Right Container / Language Buttons -->
+                        <div class="mobile-change-language">
+                            @for (lang of this.getAllLanguages(); track lang) {
+                            <button type="button" (click)="this.changeLanguage(lang)"
+                                [disabled]="this.checkLanguage(lang)"
+                                [classList]="this.checkLanguage(lang) && 'activ-language'">
+
+                                <span>{{ lang }}</span>
+                            </button>
+                            }
+                        </div>
+                    </figcaption>
+                    <img src="img/header/ellipse_mobile.svg" alt="ellipse_mobile">
+                </figure>
             </div>
         </div>
     </nav>

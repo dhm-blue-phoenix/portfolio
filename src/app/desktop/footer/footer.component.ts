@@ -12,7 +12,10 @@ import { NavbarService } from '../../services/navbar.service';
     CommonModule
   ],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrls: [
+    '../../response/mobile/footer.scss',
+    './footer.component.scss'
+  ]
 })
 
 export class FooterComponent implements OnInit {

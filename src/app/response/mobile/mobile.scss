@@ -1,0 +1,11 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+@media (max-width: 1440px) {
+    
+    .header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

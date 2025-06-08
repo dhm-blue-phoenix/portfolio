@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Import Services
 import { LanguageService } from '../../services/language.service';
 import { NavbarService } from '../../services/navbar.service';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,17 @@ import { NavbarService } from '../../services/navbar.service';
     CommonModule
   ],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: [
+    '../../response/mobile/navbar.scss',
+    './navbar.component.scss'
+  ]
 })
 
 export class NavbarComponent implements OnInit {
   public navMenuRef: string[] = ['navWhy', 'navSkills', 'navProjects', 'navContact'];
   public app: any = {};
   public activMenuItem: string = '';
+  public disableMobileMenu: boolean = false;
 
   constructor(private serviceLanguage: LanguageService, private navbarService: NavbarService) { }
 
@@ -71,5 +76,9 @@ export class NavbarComponent implements OnInit {
    */
   public checkLanguage(lang: string): boolean {
     return this.serviceLanguage.checkCurrentLanguage(lang);
+  }
+
+  public setDisableMobileMenu(): void {
+    this.disableMobileMenu = !this.disableMobileMenu;
   }
 }
