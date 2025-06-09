@@ -11,7 +11,10 @@ import { LanguageService } from '../../../services/language.service';
     CommonModule
   ],
   templateUrl: './why-me.component.html',
-  styleUrl: './why-me.component.scss'
+  styleUrls: [
+    '../../../response/mobile/main/why-me.scss',
+    './why-me.component.scss'
+  ]
 })
 
 export class WhyMeComponent implements OnInit {

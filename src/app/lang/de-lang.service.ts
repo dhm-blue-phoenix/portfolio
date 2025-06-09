@@ -33,7 +33,7 @@ export class DeLangService {
               'first_text': 'I am',
               'last_text': 'located in Munich..|'
             },
-            'right_container': 'Why are you passionate about coding? You can include some key traits like: analytical thinking, creativity, persistence and collaboration. A problem-solving mindset is always nice to have.',
+            'right_container': 'Why are you passionate about coding? \n\n You can include some key traits like: analytical thinking, creativity, persistence and collaboration. A problem-solving mindset is always nice to have.',
             'button': 'Lets talk'
           },
 

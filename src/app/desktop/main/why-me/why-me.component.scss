@@ -40,12 +40,17 @@
 
         @include flex($g: 8px);
 
-        >figcaption {
 
-            >img {
+        >img {
 
-                @include img($w: 74px, $h: 63px);
+            @include img($w: 74px, $h: 63px);
+
+            &:nth-child(2) {
+                display: none;
             }
+        }
+
+        >figcaption {
 
             >span {
                 user-select: text;
