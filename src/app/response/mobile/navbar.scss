@@ -39,22 +39,22 @@
         >div:last-child {
             position: absolute;
             left: 0;
-            top: 0;
+            top: 145px;
             width: calc(100vw - $scrollbar-w);
             height: 100vh;
+            pointer-events: none;
 
-            @include flex();
+            @include flex($ai: flex-start);
         }
     }
 
     // >> Nav Menu
     .mobile-menu {
-        z-index: 1;
+        z-index: 2;
         width: 30px;
         height: 32px;
         max-width: 30px;
         max-height: 32px;
-
 
         @include bg-img($bg-i: '../assets/img/menu_icon.svg', $bg-s: contain);
     }
@@ -64,6 +64,9 @@
         position: relative;
         width: 353.16px;
         height: 370px;
+        z-index: 0;
+        pointer-events: all;
+        top: 0;
 
         @include flex();
 
@@ -84,6 +87,7 @@
     .disable-mobile-nav {
         transition: all ease-in-out 125ms;
         opacity: 0;
+        z-index: -2;
     }
 
     .mobile-menu-list {
@@ -99,7 +103,7 @@
     }
 
     .activ-menu-item {
-        > span {
+        >span {
             color: $main-color-white !important;
         }
     }

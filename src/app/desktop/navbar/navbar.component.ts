@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   public navMenuRef: string[] = ['navWhy', 'navSkills', 'navProjects', 'navContact'];
   public app: any = {};
   public activMenuItem: string = '';
-  public disableMobileMenu: boolean = false;
+  public disableMobileMenu: boolean = true;
 
   constructor(private serviceLanguage: LanguageService, private navbarService: NavbarService) { }
 

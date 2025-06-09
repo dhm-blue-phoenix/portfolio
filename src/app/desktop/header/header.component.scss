@@ -40,6 +40,10 @@
 
                 @include img($w: 535px, $h: 683px);
 
+                &:nth-child(2) {
+                    display: none;
+                }
+
                 &:hover {
 
                     &:hover~.left-img-bg {

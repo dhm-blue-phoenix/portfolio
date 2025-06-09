@@ -2,4 +2,74 @@
 @use '../../../styles/global-fonts' as *;
 @use '../../../styles/globle-mixin' as *;
 
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+    .header-left {
+
+        @include flex();
+
+        >figure {
+            position: relative;
+            width: 389px;
+            height: 370px;
+            max-width: 389px;
+            max-height: 370px;
+
+            @include flex();
+
+            >img {
+
+                @include img($w: 266.96px, $h: 370px);
+
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .left-img-bg {
+        position: absolute;
+        width: 311.17px;
+        height: 370px;
+        top: 20px;
+        z-index: -1;
+        background-image: url('../../../assets/img/header/ellipse_mobile.svg');
+
+        @include bg-img($bg-s: contain);
+    }
+
+    .left-img-bg-hover,
+    .right-logo {
+        display: none;
+    }
+
+    .right-headline {
+        color: $main-color-white;
+        min-height: 93px;
+        padding-top: 16px;
+        padding-bottom: 24px;
+
+        @include flex($fd: column, $jc: space-between);
+
+        >h1 {
+
+            @include font($ff: 'Anta', $fw: 400, $fs: 48px);
+        }
+
+        >h2 {
+
+            @include font($ff: 'Josefin Sans', $fw: 400, $fs: 24px);
+        }
+    }
+
+    .right-btn {
+        >figure {
+
+            @include flex();
+
+            >hr {
+                display: none;
+            }
+        }
+    }
+}
