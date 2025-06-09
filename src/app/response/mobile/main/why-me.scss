@@ -24,6 +24,7 @@
         @include flex($g: 8px);
 
         >img {
+            user-select: none;
 
             @include img($w: 32.5px, $h: 40px, $of: contain);
 
@@ -49,8 +50,6 @@
 
     // >> Right Container
     .c-right {
-        flex: 1;
-        height: 100%;
         text-align: center;
 
         @include flex($fd: column, $jc: space-between, $ai: flex-end);
@@ -63,7 +62,28 @@
         }
 
         >div {
-            display: none;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            >a {
+                transition: all 120ms;
+                width: 132px;
+                height: 48px;
+                background-color: $main-color-lightblue;
+                border-color: $main-color-lightblue;
+                border-radius: 30px;
+                border-style: solid;
+
+                @include flex();
+
+                >span {
+
+                    @include font($c: $main-color-black, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+                }
+            }
         }
     }
 }

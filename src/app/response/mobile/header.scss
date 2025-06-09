@@ -17,6 +17,7 @@
             @include flex();
 
             >img {
+                user-select: none;
 
                 @include img($w: 266.96px, $h: 370px);
 
@@ -63,6 +64,8 @@
     }
 
     .right-btn {
+        user-select: none;
+
         >figure {
 
             @include flex();

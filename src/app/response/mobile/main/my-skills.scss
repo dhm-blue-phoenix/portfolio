@@ -1,0 +1,97 @@
+@use '../../../../styles/global-colors' as *;
+@use '../../../../styles/global-fonts' as *;
+@use '../../../../styles/globle-mixin' as *;
+
+@media (max-width: 1440px) {
+    .mySkills {
+
+        @include flex($fd: column, $g: 30px);
+    }
+
+    .headline {
+        text-align: center;
+
+        >h3 {
+
+            @include font($c: $main-color-lightblue, $ff: 'Anta', $fw: 400, $fs: 32px);
+        }
+    }
+
+    .container {
+        user-select: none;
+
+        @include flex($fd: column, $g: 30px);
+    }
+
+    // >> Left Container
+    .c-left {
+        flex-wrap: wrap;
+
+        @include flex($g: 46px);
+    }
+
+    .left-img-item {
+        >figcaption {
+            display: none;
+        }
+    }
+
+    // >> Right Container
+    .c-right {
+        width: 343px;
+        height: 147px;
+        position: relative;
+
+        @include flex($ai: flex-end);
+
+        >figure {
+
+            @include flex($ai: flex-end, $fd: row-reverse);
+
+            >img {
+
+                @include img($w: 112px, $h: 96px, $of: contain);
+            }
+        }
+    }
+
+    .c-right {
+        >figure {
+            >figcaption {
+                user-select: all;
+                padding-right: 16px;
+
+                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
+
+                >span {
+                    position: absolute;
+                    text-align: center;
+                    top: 0;
+                    width: 100%;
+
+                    @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
+                }
+
+                >div {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 112px;
+                    height: 96px;
+                    font-size: 14px;
+
+                    @include flex($jc: flex-end, $g: 8px);
+                }
+
+                >p {
+                    line-height: 20px;
+                    user-select: all;
+                }
+            }
+        }
+
+        .right-img-item {
+            user-select: none;
+        }
+    }
+}

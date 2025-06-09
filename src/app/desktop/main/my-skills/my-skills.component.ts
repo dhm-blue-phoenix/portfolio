@@ -11,7 +11,10 @@ import { LanguageService } from '../../../services/language.service';
     CommonModule
   ],
   templateUrl: './my-skills.component.html',
-  styleUrl: './my-skills.component.scss'
+  styleUrls: [
+    '../../../response/mobile/main/my-skills.scss',
+    './my-skills.component.scss'
+  ]
 })
 
 export class MySkillsComponent implements OnInit {
