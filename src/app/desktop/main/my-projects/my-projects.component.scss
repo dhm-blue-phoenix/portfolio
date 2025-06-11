@@ -2,6 +2,51 @@
 @use '../../../../styles/global-fonts' as *;
 @use '../../../../styles/globle-mixin' as *;
 
+.c-main-btn {
+    @include flex($g: 32px);
+
+    >a {
+        transition: all 120ms;
+        width: 132px;
+        height: 48px;
+        border-radius: 30px;
+        border-style: solid;
+
+        @include flex();
+
+        >span {
+
+            @include font($fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+        }
+    }
+
+    >a:first-child {
+        background-color: $main-color-lightblue;
+        border-color: $main-color-lightblue;
+
+        >span {
+            color: $main-color-black;
+        }
+
+        &:hover {
+            background-color: $main-color-white;
+            border-color: $main-color-white;
+        }
+    }
+
+    >a:last-child {
+        border-color: $main-color-lightblue;
+
+        >span {
+            color: $main-color-lightblue;
+        }
+
+        &:hover {
+            background-color: $main-color-white-hover;
+        }
+    }
+}
+
 // >> Desktop Design << \\
 @media (min-width: 1440px) {
     section {
@@ -27,6 +72,20 @@
     .container {
         max-height: 645px;
         height: 645px;
+    }
+
+    .c-nav-mobile {
+        display: none;
+    }
+
+    .c-main-mobile-top {
+        >span {
+            display: none;
+        }
+    }
+
+    .c-main-mobile-proj-title {
+        display: none;
     }
 
     // >> Nav Container
@@ -168,6 +227,10 @@
 
                 @include img($w: 32px, $h: 36px);
             }
+
+            >span {
+                display: none;
+            }
         }
 
         >figcaption {
@@ -186,52 +249,6 @@
 
             @include img($w: 453.47, $h: 312);
         }
-
-        >figcaption {
-
-            @include flex($g: 32px);
-
-            >a {
-                transition: all 120ms;
-                width: 132px;
-                height: 48px;
-                border-radius: 30px;
-                border-style: solid;
-
-                @include flex();
-
-                >span {
-
-                    @include font($fw: 400, $fs: 18px, $ff: 'Josefin Sans');
-                }
-            }
-
-            >a:first-child {
-                background-color: $main-color-lightblue;
-                border-color: $main-color-lightblue;
-
-                >span {
-                    color: $main-color-black;
-                }
-
-                &:hover {
-                    background-color: $main-color-white;
-                    border-color: $main-color-white;
-                }
-            }
-
-            >a:last-child {
-                border-color: $main-color-lightblue;
-
-                >span {
-                    color: $main-color-lightblue;
-                }
-
-                &:hover {
-                    background-color: $main-color-white-hover;
-                }
-            }
-        }
     }
 
     .comming-soon {
@@ -246,5 +263,10 @@
 
             @include font($c: $main-color-lightblue, $fw: 500, $fs: 30px, $ff: 'Josefin Sans');
         }
+    }
+
+    // >> Mobile Symbole
+    .mobile-symbol {
+        display: none;
     }
 }

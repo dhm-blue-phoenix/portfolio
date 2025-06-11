@@ -1,0 +1,173 @@
+@use '../../../../styles/global-colors' as *;
+@use '../../../../styles/global-fonts' as *;
+@use '../../../../styles/globle-mixin' as *;
+
+@media (max-width: 1440px) {
+    section {
+        width: calc(100vw - $scrollbar-w);
+    
+        >div {
+
+            @include flex($fd: column, $g: 32px);
+        }
+    }
+
+    .headline {
+        text-align: center;
+
+        >h3 {
+
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+        }
+    }
+
+    // >> Nav Container
+    .c-nav {
+        width: calc(100vw - 20px);
+
+        @include flex();
+
+        >ul {
+            max-width: 1199px;
+            width: 1199px;
+            display: flex;
+        }
+    }
+
+    .c-nav-list-item {
+        width: 90px;
+        height: 39px;
+
+        @include flex();
+
+        >button {
+            >span {
+                display: none;
+            }
+        }
+    }
+    
+    .c-nav-mobile {
+        display: block !important;
+
+        @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+    }
+
+    .activ-nav-btn {
+        min-width: 90px;
+        min-height: 39px;
+        background-color: $main-color-lightblack;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        >button {
+            >span {
+                color: $main-color-lightblue;
+            }
+        }
+    }
+
+    .c-main {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: $main-color-lightblack;
+        border-radius: 40px;
+        border-top-left-radius: 0;
+        padding: 40px 20px 120px 20px;
+    }
+
+    // >> Main Right /> Top
+    .c-main-right {
+        padding-bottom: 32px;
+
+        @include flex($fd: column, $g: 32px, $ai: flex-start);
+    }
+
+    .c-main-mobile-proj-title {
+
+        @include font($ff: 'Josefin Sans', $c: $main-color-lightblue, $fw: 400, $fs: 24px);
+    }
+
+    .c-main-mobile-top {
+
+        @include flex($fd: column, $g: 8px, $ai: flex-start);
+        @include font($ff: 'Josefin Sans', $c: $main-color-white, $fw: 400, $fs: 14px);
+    }
+
+    .c-main-right-top {
+        >div {
+            >img {
+                display: none;
+            }
+        }
+
+        @include flex($fd: row-reverse, $g: 4px, $jc: flex-end);
+    }
+
+    .c-main-right-bottom {
+        width: 100%;
+
+        @include flex();
+
+        >img {
+            border-radius: 30px;
+
+            @include img($w: 269px, $h: 167px);
+        }
+    }
+
+    .comming-soon {
+        width: 269px;
+        height: 167px;
+        background-color: $main-color-white;
+        border-radius: 30px;
+
+        @include flex();
+
+        >span {
+
+            @include font($c: $main-color-lightblue, $fw: 500, $fs: 30px, $ff: 'Josefin Sans');
+        }
+    }
+
+    .c-main-btn {
+        position: absolute;
+        bottom: 40px;
+    }
+
+    // >> Main Left /> Bottom
+    .c-main-list-item {
+        padding: 16px 0;
+        
+        >img {
+            
+            @include img($w: 29px, $h: 26px);
+        }
+
+        @include flex($ai: flex-start, $g: 8px);
+    }
+
+    .c-main-list-item-text {
+        >span {
+            min-height: 26px;
+            
+            @include flex($jc: flex-start);
+            @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+        }
+        
+        >p {
+            transform: translateX(-29px);
+            width: 100%;
+            
+            @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
+        }
+
+        @include flex($fd: column, $g: 16px);
+    }
+
+    .c-main-weeks {
+        display: none;
+    }
+}

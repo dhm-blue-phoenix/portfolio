@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 // Import Services
 import { LanguageService } from '../../services/language.service';
 import { NavbarService } from '../../services/navbar.service';
-import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
