@@ -201,7 +201,8 @@ export class DeLangService {
 
           // >> App/Main/Sections/Need_a_Teamplayer
           'need_a_teamplayer': {
-            'headline': 'Brauchen Sie einen Teamplayer? Hier, was meine Kollegen über mich gesagt haben',
+            'headline': 'Need a teamplayer?',
+            'headline_text': 'Here what my colleagues said about me',
             'infobox': [
               // >> Infobox
               {

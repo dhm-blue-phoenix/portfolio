@@ -3,34 +3,38 @@
         <!-- >> Headline Container -->
         <div class="headline">
             <h3>{{ this.app.headline }}</h3>
+            <h3>{{ this.app.headline_text }}</h3>
         </div>
 
-        <!-- >> Main Container -->
-        <div class="c-main">
-            @for (item of app.infobox; track item) {
+        <div class="mobile-scroll">
 
-            <!-- >> Main Infobox -->
-            <figure class="infobox">
-                <img src="img/main/ellipse_dark.svg" alt="ellipse_dark">
-                <figcaption>
-                    <div class="infobox-header">
-                        <span>{{ item.header.headline }}</span>
-                        <span>
-                            {{ item.header.text }}
-                            <span>{{ item.header.project_name }}</span>
-                        </span>
-                    </div>
-                    <div class="infobox-main">
-                        <p>
-                            {{ item.main.text }}
-                        </p>
-                    </div>
-                    <div class="infobox-footer">
-                        <a href="{{ item.footer.url }}">{{ item.footer.link_text }}</a>
-                    </div>
-                </figcaption>
-            </figure>
-            }
+            <!-- >> Main Container -->
+            <div class="c-main">
+                @for (item of app.infobox; track item) {
+
+                <!-- >> Main Infobox -->
+                <figure class="infobox">
+                    <img src="img/main/ellipse_dark.svg" alt="ellipse_dark">
+                    <figcaption>
+                        <div class="infobox-header">
+                            <span>{{ item.header.headline }}</span>
+                            <span>
+                                {{ item.header.text }}
+                                <span>{{ item.header.project_name }}</span>
+                            </span>
+                        </div>
+                        <div class="infobox-main">
+                            <p>
+                                {{ item.main.text }}
+                            </p>
+                        </div>
+                        <div class="infobox-footer">
+                            <a href="{{ item.footer.url }}">{{ item.footer.link_text }}</a>
+                        </div>
+                    </figcaption>
+                </figure>
+                }
+            </div>
         </div>
     </div>
 </section>

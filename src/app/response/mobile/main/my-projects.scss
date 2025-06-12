@@ -17,7 +17,7 @@
 
         >h3 {
 
-            @include font($c: $main-color-lightblue, $fw: 400, $fs: 60px, $ff: 'Anta');
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Anta');
         }
     }
 
@@ -164,7 +164,7 @@
             @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
         }
 
-        @include flex($fd: column, $g: 16px);
+        @include flex($fd: column, $g: 16px, $ai: flex-start);
     }
 
     .c-main-weeks {

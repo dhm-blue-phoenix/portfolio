@@ -11,7 +11,10 @@ import { LanguageService } from '../../../services/language.service';
     CommonModule
   ],
   templateUrl: './need-a-teamplayer.component.html',
-  styleUrl: './need-a-teamplayer.component.scss'
+  styleUrls: [
+    '../../../response/mobile/main/need-a-teamplayer.scss',
+    './need-a-teamplayer.component.scss'
+  ]
 })
 
 export class NeedATeamplayerComponent {

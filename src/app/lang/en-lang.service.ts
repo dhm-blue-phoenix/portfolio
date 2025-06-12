@@ -201,7 +201,8 @@ export class EnLangService {
 
           // >> App/Main/Sections/Need_a_Teamplayer
           'need_a_teamplayer': {
-            'headline': 'Need a teamplayer? Here what my colleagues said about me',
+            'headline': 'Need a teamplayer?',
+            'headline_text': 'Here what my colleagues said about me',
             'infobox': [
               // >> Infobox
               {

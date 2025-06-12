@@ -14,11 +14,10 @@
 
     .headline {
         text-align: center;
-
-        >h3 {
-
-            @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Josefin Sans');
-        }
+        display: flex;
+        gap: 8px;
+        
+        @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Josefin Sans');
     }
 
     .c-main {
