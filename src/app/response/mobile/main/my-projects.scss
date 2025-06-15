@@ -23,6 +23,7 @@
 
     // >> Nav Container
     .c-nav {
+        user-select: none;
         width: calc(100vw - 20px);
 
         @include flex();
@@ -112,6 +113,7 @@
         @include flex();
 
         >img {
+            user-select: none;
             border-radius: 30px;
 
             @include img($w: 269px, $h: 167px);
@@ -133,6 +135,7 @@
     }
 
     .c-main-btn {
+        user-select: none;
         position: absolute;
         bottom: 40px;
     }
@@ -142,6 +145,7 @@
         padding: 16px 0;
         
         >img {
+            user-select: none;
             
             @include img($w: 29px, $h: 26px);
         }

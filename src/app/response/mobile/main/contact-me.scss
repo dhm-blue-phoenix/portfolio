@@ -1,0 +1,251 @@
+@use '../../../../styles/global-colors' as *;
+@use '../../../../styles/global-fonts' as *;
+@use '../../../../styles/globle-mixin' as *;
+
+@media (max-width: 1440px) {
+    section {
+        max-width: 344px;
+        min-height: 491px;
+
+        >div {
+            position: relative;
+        }
+    }
+
+    // >> Contact Header
+    .headline {
+        text-align: center;
+        padding-bottom: 20px;
+
+        >h3 {
+
+            @include font($c: $main-color-lightblue, $fw: 400, $fs: 32px, $ff: 'Anta');
+        }
+    }
+
+    // >> Contact Header / Nav Btn To Header
+    .header-nav-btn {
+        position: absolute;
+
+        // !! NAV-BTN | noch nicht fertig !!
+        display: none;
+    }
+
+    // >> Main Contact
+    .c-main-contact-info {
+        >p {
+
+            @include font($c: $main-color-white, $fw: 400, $fs: 16px, $ff: 'Josefin Sans');
+        }
+
+        @include flex($fd: column-reverse, $g: 16px);
+    }
+
+    // >> Main Contact -- Info
+    .contact-info {
+
+        @include flex($fd: column-reverse, $ai: flex-start);
+
+        >a {
+            >figure {
+
+                @include flex($g: 8px, $jc: flex-start);
+
+                >div {
+                    position: relative;
+
+                    >img {
+                        user-select: none;
+
+                        &:last-child {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                >figcaption {
+                    >span {
+                        &:first-child {
+                            padding-right: 8px;
+                        }
+
+                        @include font($c: $main-color-white, $fw: 400, $fs: 18px, $ff: 'Josefin Sans');
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    >div {
+                        >img {
+                            &:first-child {
+                                opacity: 0;
+                            }
+
+                            &:last-child {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    >figcaption {
+                        color: $main-color-lightblue;
+
+                        >span {
+                            color: $main-color-lightblue !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // >> Main Contact -- Formular
+    .c-main-contact-form {
+
+        @include flex($g: 16px, $fd: column, $jc: flex-start);
+
+        >form {
+
+            @include flex($g: 32px, $fd: column);
+
+            >div {
+
+                @include flex($g: 32px, $fd: column);
+            }
+
+            >label {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                @include flex($g: 4px, $fd: column);
+
+                >span {
+                    position: absolute;
+                    top: 25px;
+                    left: 0;
+                    user-select: none;
+                    padding-left: 32px;
+
+                    @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                }
+
+                >textarea {
+                    width: 100%;
+                    height: 146.63px;
+                    background-color: transparent;
+                    resize: none;
+                    padding: 20px 25px;
+
+                    @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 20px);
+                    @include border($br: 30px, $bc: $main-color-lightblue, $bw: 1px);
+
+                    &:focus {
+                        background-color: $main-color-lightblue-hover;
+                        outline-style: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        padding-top: 40px;
+
+        @include flex($g: 16px, $jc: space-between);
+
+        >label {
+            position: relative;
+            width: 344px;
+            height: 60px;
+
+            @include flex($g: 4px, $fd: column, $jc: flex-start, $ai: flex-start);
+
+            >span {
+                position: absolute;
+                top: 25px;
+                user-select: none;
+                padding-left: 32px;
+
+                @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+            }
+
+            >input {
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                padding: 0 32px;
+
+                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 20px);
+                @include border($br: 30px, $bc: $main-color-lightblue, $bw: 1px);
+
+                &:focus {
+                    background-color: $main-color-lightblue-hover;
+                    outline-style: none;
+                }
+            }
+        }
+    }
+
+    // >> Main Contact Footer
+    .c-main-contact-footer {
+        width: 100%;
+        height: 107px;
+
+        @include flex($g: 4px, $fd: column);
+
+        >figure {
+            height: 100%;
+
+            @include flex($g: 4px, $jc: flex-start, $ai: flex-start);
+
+            >img {
+                user-select: none;
+            }
+
+            >figcaption {
+                height: 27px;
+
+                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+
+                >a {
+                    color: $main-color-lightblue;
+                    padding: 0 8px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        >div {
+            width: 100%;
+            height: 100%;
+
+            @include flex($ai: flex-end, $jc: flex-end);
+
+            >button {
+                user-select: none;
+                width: 101px;
+                height: 48px;
+                filter: opacity(50%);
+
+                @include border($bc: $main-color-white, $br: 30px, $bw: 1px);
+
+                >span {
+
+                    @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
+                }
+            }
+        }
+    }
+}

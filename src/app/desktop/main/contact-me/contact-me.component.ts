@@ -12,7 +12,10 @@ import { NavbarService } from '../../../services/navbar.service';
     CommonModule
   ],
   templateUrl: './contact-me.component.html',
-  styleUrl: './contact-me.component.scss'
+  styleUrls: [
+    '../../../response/mobile/main/contact-me.scss',
+    './contact-me.component.scss'
+  ]
 })
 
 export class ContactMeComponent implements OnInit {
