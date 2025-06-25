@@ -30,11 +30,11 @@ export class DeLangService {
           'why_me': {
             'headline': 'Warum ich',
             'left_container': {
-              'first_text': 'I am',
-              'last_text': 'located in Munich..|'
+              'first_text': 'Ich befinde',
+              'last_text': 'mich in Eisenstadt Umgebung..|'
             },
-            'right_container': 'Why are you passionate about coding? \n\n You can include some key traits like: analytical thinking, creativity, persistence and collaboration. A problem-solving mindset is always nice to have.',
-            'button': 'Lets talk'
+            'right_container': 'Ich programmiere gerne, weil einem da keine Grenzen gesetzt sind.',
+            'button': 'Lass uns reden'
           },
 
           // >> App/Main/Sections/MySkills
@@ -88,7 +88,7 @@ export class DeLangService {
             },
             // >> Right Container
             'right_container': {
-              'text_header': 'I am currently learning',
+              'text_header': 'Ich lerne derzeit',
               'images': [
                 // >> Technologies Icons
                 {
@@ -100,7 +100,7 @@ export class DeLangService {
                   'title': 'Vue Js'
                 }
               ],
-              'text_main': 'Show that you are motivated to continually improve your skills, implement innovative solutions and stay abreast of new technologies.'
+              'text_main': 'Durch das Erlernen der neuen Fähigkeiten lassen sich Projekte effizienter umsetzen.'
             }
           },
 
@@ -110,23 +110,23 @@ export class DeLangService {
             'projects': [
               // >> Project Informations
               {
-                'title': 'Sharkie',
+                'title': 'Join',
                 'description': [
                   // >> Left Container Text
                   {
-                    'headline': 'About the project',
-                    'weeks': 'Duration: 5 weeks',
-                    'text': 'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.'
+                    'headline': 'Über das Projekt',
+                    'weeks': 'Dauer: 2 Monate',
+                    'text': 'Ein Aufgabenmanager, der inspiriert ist vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.'
                   },
                   {
-                    'headline': 'How I have organised my work process',
+                    'headline': 'Wie ich meinen Arbeitsprozess organisiert habe',
                     'weeks': '',
-                    'text': 'How do you keep your code clean and maintainable? Have you broken the project down into reusable modules or components? Focus on documentation, naming files, variables, classes and testing.'
+                    'text': 'Das Projekt wurde bewusst modular aufgebaut, um einen übersichtlicheren und wiederverwendbaren Code zu erzielen.'
                   },
                   {
-                    'headline': 'What I have learnt',
+                    'headline': 'Meine Gruppenarbeitserfahrung',
                     'weeks': '',
-                    'text': 'As someone who is always trying to learn new technologies, you may have enjoyed working on this project because it allowed you to delve deep into a particular technology. Give details, such as the name of the framework or language you mean.'
+                    'text': 'Es ist viel leichter, große Projekte zu zweit anstatt allein umzusetzen.'
                   }
                 ],
                 // >> Right Container
@@ -138,55 +138,43 @@ export class DeLangService {
                       'title': 'HTML'
                     },
                     {
-                      'path': 'img/main/icons/technologies/javaScript.svg',
-                      'title': 'JS'
-                    },
-                    {
                       'path': 'img/main/icons/technologies/css.svg',
                       'title': 'CSS'
+                    },
+                    {
+                      'path': 'img/main/icons/technologies/javaScript.svg',
+                      'title': 'JS'
                     }
                   ],
-                  'project_image': 'img/main/projects/sharkie.svg',
+                  'project_image': 'img/main/projects/join.png',
                   'project_image_text': false,
                   'button_status': true,
                   'buttons': [
                     {
                       'text': 'Live Test',
-                      'url': '#'
+                      'url': 'https://enchanting-marigold-19046c.netlify.app'
                     },
                     {
                       'text': 'GitHub',
-                      'url': '#'
+                      'url': 'https://github.com/dhm-blue-phoenix/join.git'
                     }
                   ]
                 }
               },
               {
-                'title': 'Ongoing Project',
+                'title': 'DA Bubble',
                 'description': [
                   // >> Left Container Text
                   {
-                    'headline': 'About the project',
-                    'weeks': '',
-                    'text': 'What are you currently working on and what features are you implementing? What is the key to success in your projects?  You can mention good planning,  code quality and execution. Show a desire to learn new technologies and continually improve your skills.'
+                    'headline': 'Über das Projekt',
+                    'weeks': 'Dauer: ...',
+                    'text': 'Kommt noch...'
                   }
                 ],
                 // >> Right Container
                 'right_container': {
                   'images': [
                     // >> Technologies Icons
-                    {
-                      'path': 'img/main/icons/technologies/html.svg',
-                      'title': 'HTML'
-                    },
-                    {
-                      'path': 'img/main/icons/technologies/javaScript.svg',
-                      'title': 'JS'
-                    },
-                    {
-                      'path': 'img/main/icons/technologies/css.svg',
-                      'title': 'CSS'
-                    }
                   ],
                   'project_image': '',
                   'project_image_text': true,
@@ -196,54 +184,54 @@ export class DeLangService {
               }
             ],
             'right_headline': 'Technologien',
-            'project_image_text': 'Comming soon',
+            'project_image_text': 'Demnächst verfügbar',
           },
 
           // >> App/Main/Sections/Need_a_Teamplayer
           'need_a_teamplayer': {
-            'headline': 'Need a teamplayer?',
-            'headline_text': 'Here what my colleagues said about me',
+            'headline': 'Brauchen Sie einen Teamplayer?',
+            'headline_text': 'Hier, was meine Kollegen über mich gesagt haben',
             'infobox': [
               // >> Infobox
               {
                 'header': {
                   'headline': 'Sahra Mueller',
-                  'text': 'Project',
-                  'project_name': 'DA Bublle'
+                  'text': 'Projekt',
+                  'project_name': 'DA Bubble'
                 },
                 'main': {
                  'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
                 },
                 'footer': {
-                  'link_text': 'Linked In Profile',
+                  'link_text': 'LinkedIn-Profil',
                   'url': '#'
                 }
               },
               {
                 'header': {
                   'headline': 'Sahra Mueller',
-                  'text': 'Project',
-                  'project_name': 'DA Bublle'
+                  'text': 'Projekt',
+                  'project_name': 'DA Bubble'
                 },
                 'main': {
                  'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
                 },
                 'footer': {
-                  'link_text': 'Linked In Profile',
+                  'link_text': 'LinkedIn-Profil',
                   'url': '#'
                 }
               },
               {
                 'header': {
                   'headline': 'Sahra Mueller',
-                  'text': 'Project',
-                  'project_name': 'DA Bublle'
+                  'text': 'Projekt',
+                  'project_name': 'DA Bubble'
                 },
                 'main': {
                  'text': '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’' 
                 },
                 'footer': {
-                  'link_text': 'Linked In Profile',
+                  'link_text': 'LinkedIn-Profil',
                   'url': '#'
                 }
               }
@@ -255,17 +243,17 @@ export class DeLangService {
             'headline': 'Kontaktieren Sie mich',
             'info': {
               // >> Contact Info
-              'description': 'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...',
-              'email': 'fohrer.developer@gmail.com',
-              'tel': '0157 123 456 68'
+              'description': '',
+              'email': 'dmozelt@gmail.com',
+              'tel': '+43 65 0670 6120'
             },
             'form': {
               // >> Contact Form
-              'name': 'Your name',
-              'email': 'Your Email',
-              'msg': 'Your Message'
+              'name': 'Ihr Name',
+              'email': 'Ihre E-Mail',
+              'msg': 'Ihre Nachricht'
             },
-            'footer_text': ['Ich habe die gelesen', 'Datenschutzerklärung', 'und stimme der Verarbeitung meiner Daten wie skizziert zu.'],
+            'footer_text': ['Ich habe die', 'Datenschutzerklärung', 'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.'],
             'btn_text': 'Senden'
           }
         }
@@ -275,7 +263,7 @@ export class DeLangService {
       'footer': {
         'left': {
           'text_top': 'Rechtlicher Hinweis',
-          'text_bottom': '© Claudia Fohrer 2024'
+          'text_bottom': '© Dominik Mozelt 2025'
         }
       }
     }

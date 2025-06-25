@@ -10,7 +10,7 @@ REM Starte VSCodium
 start ./portfolio.code-workspace
 
 REM Starte Dev Server
-call npm run dev-open
+call npm run dev-start
 
 echo.
 echo Anwendung wurde beendet oder abgebrochen.

@@ -1,0 +1,45 @@
+@use '../../styles/global-colors' as *;
+@use '../../styles/global-fonts' as *;
+@use '../../styles/globle-mixin' as *;
+
+section {
+    padding: 16px;
+}
+
+button {
+    font-size: large;
+    cursor: pointer;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+a,
+span,
+button,
+p,
+li {
+    color: $main-color-white;
+    padding: 8px 0;
+}
+
+h1,
+h2,
+h3 {
+    padding: 16px 0;
+    color: $main-color-lightblue;
+}
+
+a {
+    text-decoration: underline;
+
+    &:hover {
+        color: $main-color-lightblue;
+    }
+}
+
+ul {
+    padding-left: 16px;
+    font-size: small;
+}

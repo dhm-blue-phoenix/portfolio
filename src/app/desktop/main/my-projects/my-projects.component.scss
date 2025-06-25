@@ -176,6 +176,7 @@
     }
 
     .c-main-list-item {
+        min-width: 690px;
         display: flex;
 
         >img {
@@ -246,6 +247,7 @@
         @include flex($fd: column, $g: 34px);
 
         >img {
+            max-width: 453.47px;
 
             @include img($w: 453.47, $h: 312);
         }

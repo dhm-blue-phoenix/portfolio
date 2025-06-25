@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 // Import Services
 import { LanguageService } from '../../services/language.service';
@@ -21,13 +22,17 @@ import { NavbarService } from '../../services/navbar.service';
 export class FooterComponent implements OnInit {
   public app: any = {};
 
-  constructor(private serviceLanguage: LanguageService, private navbarService: NavbarService) { }
+  constructor(private serviceLanguage: LanguageService, private navbarService: NavbarService, private router: Router) { }
 
   ngOnInit() {
     const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {
       this.app = this.serviceLanguage.getLanguageForAppUi(lang);
     });
     this.serviceLanguage.registerSubscription(subscription);
+  }
+
+  public getNextPage() {
+    this.router.navigateByUrl("/legalNotice");
   }
 
   /**

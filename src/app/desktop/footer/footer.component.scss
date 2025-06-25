@@ -15,6 +15,7 @@
     footer {
         width: 1216px;
         height: 100%;
+        user-select: none;
 
         @include flex($jc: space-between);
     }
@@ -26,7 +27,7 @@
         @include font($c: $main-color-lightblack, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
 
         >a {
-            color: $main-color-lightblack;
+            cursor: pointer;
 
             &:hover {
                 color: $main-color-white;

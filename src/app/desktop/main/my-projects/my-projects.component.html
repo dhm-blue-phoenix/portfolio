@@ -29,6 +29,7 @@
                     <div>
                         <ul class="c-main-list">
                             @for (item of app.projects[currentProject].description; track item) {
+                            @if (item.headline.length && item.text.length > 1) {
                             <li>
                                 <figure class="c-main-list-item">
                                     <img src="img/main/list_item.svg" alt="list_item">
@@ -41,6 +42,7 @@
                                 </figure>
                             </li>
                             }
+                            }
                         </ul>
                     </div>
 
@@ -50,7 +52,7 @@
                         <!-- >> Main Right Top Container /> Mobile -->
                         <div class="c-main-mobile-top">
                             <span class="c-main-mobile-proj-title">{{ app.projects[this.currentProject].title }}</span>
-                            
+
                             <figure class="c-main-right-top">
                                 <div>
                                     @for (item of app.projects[currentProject].right_container.images;

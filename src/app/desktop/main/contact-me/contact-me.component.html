@@ -11,7 +11,7 @@
         <!-- >> Headline Container -->
         <div class="headline">
             <h3>{{ this.app.headline }}</h3>
-            
+
             <!-- >> Nav Button To Header -->
             <div class="header-nav-btn">
                 <figure>
@@ -59,39 +59,44 @@
 
             <!-- >> Main Contact Formular -->
             <div class="c-main-contact-form">
-                <form>
+                <form (ngSubmit)="this.onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="contact-form">
                         <label for="inputName">
-                            <span>{{ this.app.form.name }}</span>
-                            <input type="text" name="name" id="inputName">
+                            <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.name }}</span>
+                            <input [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.name" type="text" name="name" id="inputName" required>
                         </label>
                         <label for="inputEmail">
-                            <span>{{ this.app.form.email }}</span>
-                            <input type="text" name="email" id="inputEmail">
+                            <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.email }}</span>
+                            <input [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.email" type="text" name="email" id="inputEmail" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                         </label>
                     </div>
                     <label for="textareaMessage">
-                        <span>{{ this.app.form.msg }}</span>
-                        <textarea name="message" id="textareaMessage"></textarea>
+                        <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.msg }}</span>
+                        <textarea [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.message" name="message" id="textareaMessage" required></textarea>
                     </label>
-                </form>
 
-                <!-- >> Main Contact Footer -->
-                <div class="c-main-contact-footer">
-                    <figure>
-                        <img src="img/main/contact_list_item.svg" alt="contact_list_item">
-                        <figcaption>
-                            <span>{{ this.app.footer_text[0] }}</span>
-                            <a href="#" target="_blank" rel="noopener noreferrer">{{ this.app.footer_text[1] }}</a>
-                            <span>{{ this.app.footer_text[2] }}</span>
-                        </figcaption>
-                    </figure>
-                    <div>
-                        <button type="button">
-                            <span>{{ this.app.btn_text }}</span>
-                        </button>
+                    <!-- >> Main Contact Footer -->
+                    <div class="c-main-contact-footer">
+                        <figure>
+                            <button type="button" class="footer-img" (click)="this.setFormFooterClick()" [ngClass]="{ 'form-clicked-footer' : this.formFooterClicked}" [ngClass]="{ 'form-err-footer' : this.formFooterValid }" >
+                                <img src="img/main/contact_list_item.svg" alt="contact_list_item">
+                                <img src="img/main/contact_list_item_hover.svg" alt="contact_list_item_hover">
+                                <img src="img/main/contact_list_item_checked.svg" alt="contact_list_item_checked">
+                                <img src="img/main/contact_list_item_error.svg" alt="contact_list_item_error">
+                            </button>
+                            <figcaption>
+                                <span>{{ this.app.footer_text[0] }}</span>
+                                <a (click)="this.getNextPage()">{{ this.app.footer_text[1] }}</a>
+                                <span>{{ this.app.footer_text[2] }}</span>
+                            </figcaption>
+                        </figure>
+                        <div>
+                            <button type="submit">
+                                <span>{{ this.app.btn_text }}</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
