@@ -248,6 +248,7 @@
 
         >img {
             max-width: 453.47px;
+            border-radius: 30px;
 
             @include img($w: 453.47, $h: 312);
         }

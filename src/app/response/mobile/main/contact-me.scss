@@ -4,8 +4,10 @@
 
 @media (max-width: 1440px) {
     section {
-        max-width: 344px;
+        max-width: 320px;
         min-height: 491px;
+        
+        padding-bottom: 64px;
 
         >div {
             position: relative;
@@ -164,7 +166,7 @@
 
         >label {
             position: relative;
-            width: 344px;
+            width: 310px;
             height: 60px;
 
             @include flex($g: 4px, $fd: column, $jc: flex-start, $ai: flex-start);
@@ -217,6 +219,7 @@
                 @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
 
                 >a {
+                    cursor: pointer;
                     color: $main-color-lightblue;
                     padding: 0 8px;
 

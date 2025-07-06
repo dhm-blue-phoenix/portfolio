@@ -1,29 +1,22 @@
+<app-navbar />
+
 <section>
     <div>
-        <button (click)="this.getNextPage()" type="button">Back</button>
-    </div>
-    <div>
-        <h1>Legal Notice</h1>
-        <span>Dominik Mozelt</span> <br>
-        <span>Bachreith 17</span> <br>
-        <span>2443 Leithaprodersdorf</span>
-    </div>
-    <div>
-        <h2>Contact</h2>
-        <span>
-            Phone: <a href="tel:+436506706120">+43 650 670 6120</a>
-        </span> <br>
-        <span>
-            Email: <a href="mailto:dmozelt@gmail.com">dmozelt&#64;gmail.com</a>
-        </span> <br>
-        <span>
-            Source: <a
-                href="https://www.e-recht24.de/impressum-generator.html">https://www.e-recht24.de/impressum-generator.html</a>
-        </span>
-    </div>
-    <div>
+        <h1>{{ app.legal_notice.headline }}</h1>
+        
+        <p>{{ app.legal_notice.address.name }}</p>
+        <p>{{ app.legal_notice.address.street }}</p>
+        <p>{{ app.legal_notice.address.city }}</p>
+
+        <h2>{{ app.legal_notice.contact.title }}</h2>
+        <p>{{ app.legal_notice.contact.phone }}</p>
+        <p>{{ app.legal_notice.contact.email }}</p>
+
         <p>
-            Created my free logo at <a href="https://logomakr.com" target="_blank">LogoMakr.com</a>
+            {{ app.legal_notice.source.text }}
+            <a [href]="app.legal_notice.source.url" target="_blank">{{ app.legal_notice.source.url }}</a>
         </p>
     </div>
 </section>
+
+<app-footer />

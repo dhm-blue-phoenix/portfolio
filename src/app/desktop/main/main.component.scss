@@ -1,13 +1,12 @@
 @use '../../../styles/globle-mixin' as *;
 
-
 main {
-    padding: 80px;
+    padding: 64px 0;
 }
 
 main,
 .top-sec {
-
+    
     @include flex($fd: column, $g: 80px);
 }
 

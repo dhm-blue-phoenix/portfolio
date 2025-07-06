@@ -78,6 +78,7 @@
         }
 
         >div {
+            margin-top: 32px;
 
             @include flex($jc: flex-end);
 

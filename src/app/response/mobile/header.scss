@@ -3,6 +3,11 @@
 @use '../../../styles/globle-mixin' as *;
 
 @media (max-width: 1440px) {
+    section {
+        height: 100vh;
+        transform: translateY(-60px);
+    }
+
     .header-left {
 
         @include flex();
@@ -10,9 +15,9 @@
         >figure {
             position: relative;
             width: 389px;
-            height: 370px;
+            // height: 370px;
             max-width: 389px;
-            max-height: 370px;
+            // max-height: 370px;
 
             @include flex();
 
@@ -49,6 +54,7 @@
         min-height: 93px;
         padding-top: 16px;
         padding-bottom: 24px;
+        text-align: center;
 
         @include flex($fd: column, $jc: space-between);
 

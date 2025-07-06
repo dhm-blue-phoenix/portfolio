@@ -4,7 +4,10 @@
 
 @media (max-width: 1440px) {
     section {
+        overflow: hidden;
+
         >div {
+            max-width: 320px;
 
             @include flex($g: 32px, $fd: column);
         }
@@ -23,6 +26,8 @@
             }
         }
 
+        text-align: center;
+
         @include flex($fd: column, $g: 8px, $ai: flex-start);
     }
 
@@ -38,6 +43,7 @@
 
     .c-main {
         width: 1000px;
+        padding: 0 24px;
         
         @include flex($jc: space-evenly);
     }

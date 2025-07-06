@@ -1,5 +1,5 @@
 <section>
-    <div style="display: none;">
+    <div>
         <!-- >> Headline Container -->
         <div class="headline">
             <h3>{{ this.app.headline }}</h3>
@@ -28,7 +28,8 @@
                                 {{ item.main.text }}
                             </p>
                         </div>
-                        <div class="infobox-footer">
+                        <!-- [Display none] the footer of Infobox -->
+                        <div style="display: none;" class="infobox-footer">
                             <a href="{{ item.footer.url }}">{{ item.footer.link_text }}</a>
                         </div>
                     </figcaption>

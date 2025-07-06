@@ -5,19 +5,21 @@
 @media (max-width: 1440px) {
     section {
         padding: 32px;
+        padding-top: 8px;
+        padding-bottom: 0;
         user-select: none;
     }
 
     nav {
 
-        @include flex($jc: space-between, $ai: flex-start);
+        @include flex($jc: space-between, $ai: center);
     }
 
     .logo {
         >a {
             >img {
 
-                @include img($w: 58px, $h: 72px, $of: contain);
+                @include img($w: 58px, $h: 72px, $of: cover);
 
                 &:first-child {
                     display: none;
@@ -36,10 +38,18 @@
 
         @include flex($jc: flex-end);
 
+        >div:first-child {
+            margin-bottom: 18px;
+        }
+
         >div:last-child {
+            overflow-x: hidden;
+            // overflow-y: visible;
+            z-index: 2;
+
             position: absolute;
             left: 0;
-            top: 145px;
+            top: 58px;
             width: calc(100vw - $scrollbar-w);
             height: 100vh;
             pointer-events: none;
@@ -56,14 +66,14 @@
         max-width: 30px;
         max-height: 32px;
 
-        @include bg-img($bg-i: '../assets/img/menu_icon.svg', $bg-s: contain);
+        @include bg-img($bg-i: '../assets/img/menu_icon.svg', $bg-s: cover);
     }
 
     .mobile-nav {
         opacity: 1;
         position: relative;
-        width: 353.16px;
-        height: 370px;
+        width: 320px;
+        height: auto;
         z-index: 0;
         pointer-events: all;
         top: 0;
@@ -72,7 +82,7 @@
 
         >img {
 
-            @include img($w: 353.16px, $h: 370px);
+            @include img($w: 320px, $h: auto, $of: cover);
         }
 
         >figcaption {
@@ -105,6 +115,14 @@
     .activ-menu-item {
         >span {
             color: $main-color-white !important;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .mobile {
+        >div:last-child {
+            width: 100vw;
         }
     }
 }

@@ -1,37 +1,50 @@
 <?php
+header('Access-Control-Allow-Origin: *');      //  CORS
+header('Access-Control-Allow-Headers: Content-Type');
+header('Content-Type: application/json; charset=utf-8');
 
 switch ($_SERVER['REQUEST_METHOD']) {
-    case ("OPTIONS"): //Allow preflighting to take place.
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Allow-Headers: content-type");
+    case 'OPTIONS':            // Preflight
+        header('Access-Control-Allow-Methods: POST, OPTIONS');
         exit;
-        case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: *");
-            // Payload is not send to $_POST Variable,
-            // is send to php:input as a text
-            $json = file_get_contents('php://input');
-            //parse the Payload from text format to Object
-            $params = json_decode($json);
-    
-            $email = $params->email;
-            $name = $params->name;
-            $message = $params->message;
-    
-            $recipient = 'dmozelt@gmail.com';  
-            $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br>" . $message ;
-    
-            $headers   = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=utf-8';
 
-            // Additional headers
-            $headers[] = "From: portfolio0977.netlify.app/";
+    case 'POST':
+        // ---------- JSON einlesen ----------
+        $rawData = file_get_contents('php://input');
+        $data    = json_decode($rawData, true);
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
-            break;
-        default: //Reject any non POST or OPTIONS requests.
-            header("Allow: POST", true, 405);
+        if (!$data || empty($data['email']) || empty($data['name']) || empty($data['message'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Bad Request – missing fields']);
             exit;
-    } 
+        }
+
+        // ---------- Mail zusammenbauen ----------
+        $name    = htmlspecialchars($data['name']);
+        $email   = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
+        $message = nl2br(htmlspecialchars($data['message']));
+
+        $to      = 'dmozelt@gmail.com';
+        $subject = "Kontaktformular von <$email>";
+
+        $headers = [
+            'MIME-Version: 1.0',
+            'Content-Type: text/html; charset=utf-8',
+            "From: $name <$email>",
+            "Reply-To: $email"
+        ];
+
+        // ---------- Mail senden ----------
+        if (mail($to, $subject, $message, implode("\r\n", $headers))) {
+            echo json_encode(['status' => 'ok']);
+        } else {
+            http_response_code(500);
+            echo json_encode(['error' => 'Mail function failed']);
+        }
+        exit;
+
+    default:
+        http_response_code(405);             // Method Not Allowed
+        header('Allow: POST, OPTIONS');
+        exit;
+}

@@ -1,11 +1,3 @@
-<!-- 
-    Contact Toto List:
-    ------------------
-    > Form Funktion TS
-    > Form Validate (HTML / SCSS / TS)
-    > Privacy policy Funktion 
--->
-
 <section>
     <div>
         <!-- >> Headline Container -->
@@ -62,23 +54,43 @@
                 <form (ngSubmit)="this.onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="contact-form">
                         <label for="inputName">
-                            <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.name }}</span>
-                            <input [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.name" type="text" name="name" id="inputName" required>
+                            <span [ngClass]="{ 'form-err-input' : this.formValid.name }">{{ this.app.form.name }}</span>
+                            <input [ngClass]="{ 'form-err-field' : this.formValid.name }"
+                                [(ngModel)]="this.contactData.name" (input)="validateField('name')" type="text"
+                                name="name" id="inputName" required minlength="3">
+                            <div class="form-err-text" *ngIf="formValid.name">
+                                {{ errorMsg.name }}
+                            </div>
                         </label>
                         <label for="inputEmail">
-                            <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.email }}</span>
-                            <input [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.email" type="text" name="email" id="inputEmail" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                            <span [ngClass]="{ 'form-err-input' : this.formValid.email }">{{ this.app.form.email
+                                }}</span>
+                            <input [ngClass]="{ 'form-err-field' : this.formValid.email }"
+                                [(ngModel)]="this.contactData.email" (input)="validateField('email')" type="text"
+                                name="email" id="inputEmail" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" minlength="3">
+                            <div class="form-err-text" *ngIf="formValid.email">
+                                {{ errorMsg.email }}
+                            </div>
                         </label>
                     </div>
                     <label for="textareaMessage">
-                        <span [ngClass]="{ 'form-err-input' : this.formValid }">{{ this.app.form.msg }}</span>
-                        <textarea [ngClass]="{ 'form-err-field' : this.formValid }" [(ngModel)]="this.contactData.message" name="message" id="textareaMessage" required></textarea>
+                        <span [ngClass]="{ 'form-err-input' : this.formValid.msg }">{{ this.app.form.msg }}</span>
+                        <textarea [ngClass]="{ 'form-err-field' : this.formValid.msg }"
+                            [(ngModel)]="this.contactData.msg" (input)="validateField('msg')" name="message"
+                            id="textareaMessage" required minlength="3"></textarea>
+                        <div class="form-err-text" *ngIf="formValid.msg">
+                            {{ errorMsg.msg }}
+                        </div>
                     </label>
 
                     <!-- >> Main Contact Footer -->
                     <div class="c-main-contact-footer">
                         <figure>
-                            <button type="button" class="footer-img" (click)="this.setFormFooterClick()" [ngClass]="{ 'form-clicked-footer' : this.formFooterClicked}" [ngClass]="{ 'form-err-footer' : this.formFooterValid }" >
+                            <button type="button" class="footer-img" (click)="setFormFooterClick()" [ngClass]="{
+                                    'form-clicked-footer': formFooterClicked,
+                                    'form-err-footer': formFooterValid
+                                }">
                                 <img src="img/main/contact_list_item.svg" alt="contact_list_item">
                                 <img src="img/main/contact_list_item_hover.svg" alt="contact_list_item_hover">
                                 <img src="img/main/contact_list_item_checked.svg" alt="contact_list_item_checked">

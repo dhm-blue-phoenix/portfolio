@@ -5,7 +5,7 @@
     "ng": "ng",
     "dev-start": "ng serve --port 9002 --no-hmr",
     "dev-open": "ng serve --port 9002 --open --no-hmr",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:portfolio2": "node dist/portfolio2/server/server.mjs"

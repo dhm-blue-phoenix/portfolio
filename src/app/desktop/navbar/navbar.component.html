@@ -50,7 +50,7 @@
                                 <li class="mobile-menu-item">
                                     <a href="#{{ this.navMenuRef[i] }}" [id]="'menuItem' + i"
                                         [className]="this.activMenuItem == 'menuItem' + i && 'activ-menu-item'"
-                                        (click)="this.setMenuRef('menuItem' + i)">
+                                        (click)="this.setMenuRef('menuItem' + i); this.setDisableMobileMenu()">
                                         <span>{{ item }}</span>
                                     </a>
                                 </li>
@@ -61,7 +61,7 @@
                         <!-- Right Container / Language Buttons -->
                         <div class="mobile-change-language">
                             @for (lang of this.getAllLanguages(); track lang) {
-                            <button type="button" (click)="this.changeLanguage(lang)"
+                            <button type="button" (click)="this.changeLanguage(lang); this.setDisableMobileMenu()"
                                 [disabled]="this.checkLanguage(lang)"
                                 [classList]="this.checkLanguage(lang) && 'activ-language'">
 

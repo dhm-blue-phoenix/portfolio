@@ -22,7 +22,10 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     ContactMeComponent
   ],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrls: [
+    '../../response/mobile/main.scss',
+    './main.component.scss'
+  ]
 })
 
 export class MainComponent { }

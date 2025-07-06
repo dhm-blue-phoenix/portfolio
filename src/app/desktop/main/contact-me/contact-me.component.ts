@@ -1,18 +1,17 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 // Import Services
 import { LanguageService } from '../../../services/language.service';
 import { NavbarService } from '../../../services/navbar.service';
-import { log } from 'console';
 
 interface ContactData {
   name: string,
   email: string,
-  message: string
+  msg: string
 }
 
 @Component({
@@ -34,9 +33,13 @@ export class ContactMeComponent implements OnInit {
   public contactData: ContactData = {
     name: "",
     email: "",
-    message: ""
+    msg: ""
   };
-  public formValid: boolean = false;
+  public formValid = {
+    name: false,
+    email: false,
+    msg: false
+  };
   public formFooterValid: boolean = false;
   public formFooterClicked: boolean = false;
 
@@ -47,7 +50,7 @@ export class ContactMeComponent implements OnInit {
   http = inject(HttpClient);
 
   post = {
-    endPoint: 'https://portfolio0977.netlify.app/sendMail.php',
+    endPoint: 'https://portfolio-dominik-mozelt.netlify.app/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -58,25 +61,44 @@ export class ContactMeComponent implements OnInit {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && this.formFooterClicked && !this.mailTest) {
+    if (ngForm.submitted) {
+      this.checkValidFormInput(this.contactData);
+    }
+
+    if (!this.formFooterClicked) {
+      this.formFooterValid = true;
+      return;
+    }
+
+    this.formFooterValid = false;
+
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            this.formValid = false;
             ngForm.resetForm();
+            // ggf. reset flags, wenn du möchtest
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.formFooterClicked && this.mailTest) {
-      this.formValid = false;
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
-    } else {
-      this.formFooterValid = !this.formFooterClicked;
-      this.formValid = true;
     }
+  }
+
+  private checkValidFormInput({ name, email, msg }: Partial<ContactData>): void {
+    const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+    const n = (name ?? '').trim();
+    const e = (email ?? '').trim();
+    const m = (msg ?? '').trim();
+
+    this.formValid.name = n.length < 3;
+    this.formValid.email = e.length < 3 || !emailPattern.test(e);
+    this.formValid.msg = m.length < 3;
   }
 
   public setFormFooterClick() {
@@ -84,8 +106,32 @@ export class ContactMeComponent implements OnInit {
   }
 
   public getNextPage() {
-    this.router.navigateByUrl("/privacyPolicy");
+    this.setActiveMenuItem('');
+    this.router.navigateByUrl("/privacypolicy").then(() => {
+      window.scrollTo({ top: 0 });
+    });
   }
+
+  public validateField(field: string): void {
+    switch (field) {
+      case 'name':
+        this.formValid.name = !this.contactData.name || this.contactData.name.trim().length < 3;
+        break;
+      case 'email':
+        const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+        this.formValid.email = !emailPattern.test(this.contactData.email || '');
+        break;
+      case 'msg':
+        this.formValid.msg = !this.contactData.msg || this.contactData.msg.trim().length < 3;
+        break;
+    }
+  }
+
+  public errorMsg = {
+    name: 'Name muss mindestens 3 Zeichen haben.',
+    email: 'Bitte eine gültige E-Mail-Adresse eingeben.',
+    msg: 'Nachricht muss mindestens 3 Zeichen haben.'
+  };
 
   ngOnInit() {
     const subscription = this.serviceLanguage.currentLanguage.subscribe(lang => {

@@ -5,7 +5,6 @@
 // >> Desktop Design << \\
 @media (min-width: 1440px) {
     section {
-
         >div {
 
             @include flex($fd: column, $g: 64px);
@@ -249,6 +248,7 @@
                 @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
 
                 >a {
+                    cursor: pointer;
                     color: $main-color-lightblue;
 
                     &:hover {
@@ -259,11 +259,13 @@
         }
 
         >div {
+            transition: all .144ms ease-in-out;
             height: 100%;
 
             @include flex($ai: flex-end);
 
             >button {
+                cursor: pointer;
                 user-select: none;
                 width: 101px;
                 height: 48px;
@@ -275,9 +277,22 @@
 
                     @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
                 }
+
+                &:hover {
+                    opacity: 50%;
+                }
             }
         }
     }
+}
+
+.form-err-text {
+  color: $main-color-lightred;
+  font-family: 'Josefin Sans';
+  font-size: 12px;
+  line-height: 16px;
+  padding-left: 32px;
+  margin-top: 4px;
 }
 
 label {

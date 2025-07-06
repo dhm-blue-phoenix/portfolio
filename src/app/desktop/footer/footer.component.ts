@@ -32,7 +32,8 @@ export class FooterComponent implements OnInit {
   }
 
   public getNextPage() {
-    this.router.navigateByUrl("/legalNotice");
+    this.setActiveMenuItem('');
+    this.router.navigateByUrl("/legalnotice");
   }
 
   /**

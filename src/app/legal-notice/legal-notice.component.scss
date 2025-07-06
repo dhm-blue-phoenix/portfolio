@@ -3,13 +3,22 @@
 @use '../../styles/globle-mixin' as *;
 
 section {
+    position: relative;
     padding: 16px;
+    height: calc(100vh - 214px - 104px);
+
+    >div {
+        background-color: $main-color-lightblack;
+        padding: 16px;
+        border-radius: 8px;
+    }
 }
 
 button {
     font-size: large;
     cursor: pointer;
-    
+    color: $main-color-lightblack;
+
     &:hover {
         text-decoration: underline;
     }
@@ -17,7 +26,6 @@ button {
 
 a,
 span,
-button,
 p {
     color: $main-color-white;
     padding: 8px 0;
