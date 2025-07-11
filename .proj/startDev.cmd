@@ -7,7 +7,7 @@ echo Starte die Anwendung...
 echo (Beende mit STRG+C)
 
 REM Starte VSCodium
-start ./portfolio.code-workspace
+@REM start ./portfolio.code-workspace
 
 REM Starte Dev Server
 call npm run dev-start

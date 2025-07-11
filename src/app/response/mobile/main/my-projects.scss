@@ -94,7 +94,7 @@
     .c-main-mobile-top {
 
         @include flex($fd: column, $g: 8px, $ai: flex-start);
-        @include font($ff: 'Josefin Sans', $c: $main-color-white, $fw: 400, $fs: 14px);
+        @include font($ff: 'Josefin Sans', $c: $main-color-white, $fw: 400, $fs: 16px);
     }
 
     .c-main-right-top {

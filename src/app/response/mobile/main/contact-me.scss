@@ -6,7 +6,8 @@
     section {
         max-width: 320px;
         min-height: 491px;
-        
+
+        padding: 0 8px;
         padding-bottom: 64px;
 
         >div {
@@ -28,8 +29,6 @@
     // >> Contact Header / Nav Btn To Header
     .header-nav-btn {
         position: absolute;
-
-        // !! NAV-BTN | noch nicht fertig !!
         display: none;
     }
 
@@ -137,7 +136,7 @@
                     user-select: none;
                     padding-left: 32px;
 
-                    @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                    @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
                 }
 
                 >textarea {
@@ -177,7 +176,7 @@
                 user-select: none;
                 padding-left: 32px;
 
-                @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                @include font($c: $main-color-white-hover, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
             }
 
             >input {
@@ -216,7 +215,7 @@
             >figcaption {
                 height: 27px;
 
-                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
 
                 >a {
                     cursor: pointer;

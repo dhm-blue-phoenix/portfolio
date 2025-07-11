@@ -41,12 +41,13 @@
         width: 310px;
         height: 147px;
         position: relative;
+        padding: 0 8px;
 
         @include flex($ai: flex-end);
 
         >figure {
 
-            @include flex($ai: flex-end, $fd: row-reverse);
+            @include flex($ai: flex-start, $fd: row-reverse);
 
             >img {
 
@@ -67,7 +68,7 @@
                     position: absolute;
                     text-align: center;
                     top: 0;
-                    width: 100%;
+                    width: 90%;
 
                     @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
                 }

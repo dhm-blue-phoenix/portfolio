@@ -13,7 +13,6 @@ interface AppUiLanguage {
 @Injectable({
   providedIn: 'root'
 })
-
 export class LanguageService implements OnDestroy {
 
   public currentLanguage = new BehaviorSubject<string>('en');
@@ -42,15 +41,27 @@ export class LanguageService implements OnDestroy {
   }
 
   /**
-   * Determines the preferred language, defaulting to 'en' if the browser language
-   * is not supported. Updates the currentLanguage property.
+   * Determines the preferred language, checking localStorage first, then falling back to
+   * browser language, and defaulting to 'de' if neither is supported.
+   * Updates the currentLanguage property.
    *
    * @private
    * @returns The preferred language code ('de', 'en', or fallback language).
    */
   private getPreferredLanguage(): 'de' | 'en' | string {
-    const lang = this.getBrowserLanguage();
-    const resultLang = lang === 'de' || lang === 'en' ? lang : 'en';
+    // Check if a language is stored in localStorage
+    const storedLang = typeof localStorage !== 'undefined' ? localStorage.getItem('preferredLanguage') : null;
+    let resultLang: string;
+
+    if (storedLang && this.languages.includes(storedLang)) {
+      // Use stored language if it exists and is supported
+      resultLang = storedLang;
+    } else {
+      // Fallback to browser language or default to 'de'
+      const browserLang = this.getBrowserLanguage();
+      resultLang = this.languages.includes(browserLang) ? browserLang : 'de';
+    }
+
     this.currentLanguage.next(resultLang);
     return resultLang;
   }
@@ -77,13 +88,18 @@ export class LanguageService implements OnDestroy {
 
   /**
    * Changes the current language to the specified language code.
-   * Only allows switching to supported languages ('de' or 'en'); defaults to 'en' for invalid inputs.
+   * Only allows switching to supported languages ('de' or 'en'); defaults to 'de' for invalid inputs.
+   * Saves the selected language to localStorage.
    *
    * @param lang - The language code to switch to (e.g., 'de', 'en').
    */
   public changeLanguage(lang: string): void {
-    const newLang = lang === 'de' ? 'de' : 'en';
+    const newLang = this.languages.includes(lang) ? lang : 'de';
     this.currentLanguage.next(newLang);
+    // Save the selected language to localStorage
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('preferredLanguage', newLang);
+    }
   }
 
   /**
@@ -106,7 +122,7 @@ export class LanguageService implements OnDestroy {
    * when the LanguageService is destroyed.
    * 
    * @param subscription - The RxJS subscription to register.
-  */
+   */
   public registerSubscription(subscription: Subscription): void {
     this.subscriptions.push(subscription);
   }

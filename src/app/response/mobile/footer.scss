@@ -40,7 +40,7 @@
     .c-left {
 
         @include flex($jc: space-between);
-        @include font($c: $main-color-lightblack, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+        @include font($c: $main-color-lightblack, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
 
         >a {
             color: $main-color-lightblack;

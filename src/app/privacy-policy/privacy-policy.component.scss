@@ -6,7 +6,11 @@ section {
     position: relative;
     padding: 16px;
 
+    @include flex($ai: flex-start);
+
     >div {
+        width: 1214px;
+        max-width: 1214px;
         background-color: $main-color-lightblack;
         padding: 16px;
         border-radius: 8px;
@@ -53,4 +57,10 @@ a {
 ul {
     padding-left: 16px;
     font-size: small;
+}
+
+@media (max-width: 530px) {
+    section>div {
+        inline-size: calc(320px - 16px);
+    }
 }

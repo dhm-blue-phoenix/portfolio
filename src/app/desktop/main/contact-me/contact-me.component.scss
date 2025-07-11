@@ -169,7 +169,7 @@
                     user-select: none;
                     padding-left: 32px;
 
-                    @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                    @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
                 }
 
                 >textarea {
@@ -205,7 +205,7 @@
                 user-select: none;
                 padding-left: 32px;
 
-                @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                @include font($c: $main-color-lightblue, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
             }
 
             >input {
@@ -245,7 +245,7 @@
                 height: 27px;
 
                 @include flex($g: 4px);
-                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 14px);
+                @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 16px);
 
                 >a {
                     cursor: pointer;
@@ -265,21 +265,16 @@
             @include flex($ai: flex-end);
 
             >button {
-                cursor: pointer;
+                cursor: not-allowed;
+                transition: background-color 0.3s ease;
                 user-select: none;
                 width: 101px;
                 height: 48px;
-                filter: opacity(50%);
 
                 @include border($bc: $main-color-white, $br: 30px, $bw: 1px);
 
                 >span {
-
                     @include font($c: $main-color-white, $ff: 'Josefin Sans', $fw: 400, $fs: 18px);
-                }
-
-                &:hover {
-                    opacity: 50%;
                 }
             }
         }
@@ -287,12 +282,12 @@
 }
 
 .form-err-text {
-  color: $main-color-lightred;
-  font-family: 'Josefin Sans';
-  font-size: 12px;
-  line-height: 16px;
-  padding-left: 32px;
-  margin-top: 4px;
+    color: $main-color-lightred;
+    font-family: 'Josefin Sans';
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 32px;
+    margin-top: 4px;
 }
 
 label {
@@ -342,6 +337,7 @@ label {
 
 .form-err-field {
     border-color: $main-color-lightred !important;
+    min-height: 60px;
 }
 
 .form-err-input {
@@ -392,4 +388,14 @@ label {
     >img:last-child {
         opacity: 0;
     }
+}
+
+.form-submit-disabled {
+    cursor: not-allowed;
+}
+
+.form-submit-active {
+    background-color: $main-color-lightblue;
+    color: $main-color-white;
+    cursor: pointer !important;
 }

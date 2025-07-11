@@ -3,13 +3,11 @@
         <!-- >> Headline Container -->
         <div class="headline">
             <h3>{{ this.app.headline }}</h3>
-
-            <!-- >> Nav Button To Header -->
             <div class="header-nav-btn">
                 <figure>
-                    <hr>
+                    <hr />
                     <a href="#navHeader" (click)="this.setActiveMenuItem('')">
-                        <img src="img/buttons/arrow_btn_down.svg" alt="arrow__button">
+                        <img src="img/buttons/arrow_btn_down.svg" alt="arrow__button" />
                     </a>
                 </figure>
             </div>
@@ -17,7 +15,6 @@
 
         <!-- >> Main Container -->
         <div class="c-main">
-
             <!-- >> Main Contact Info -->
             <div class="c-main-contact-info">
                 <p>{{ this.app.info.description }}</p>
@@ -25,8 +22,8 @@
                     <a href="mailto:{{ this.app.info.email }}">
                         <figure>
                             <div>
-                                <img src="img/main/icons/email.svg" alt="email">
-                                <img src="img/main/icons/email_hover.svg" alt="email_hover">
+                                <img src="img/main/icons/email.svg" alt="email" />
+                                <img src="img/main/icons/email_hover.svg" alt="email_hover" />
                             </div>
                             <figcaption>
                                 <span>E-Mail:</span>
@@ -34,11 +31,11 @@
                             </figcaption>
                         </figure>
                     </a>
-                    <a href="mailto:{{ this.app.info.tel }}">
+                    <a href="tel:{{ this.app.info.tel }}">
                         <figure>
                             <div>
-                                <img src="img/main/icons/phone.svg" alt="phone">
-                                <img src="img/main/icons/phone_hover.svg" alt="phone_hover">
+                                <img src="img/main/icons/phone.svg" alt="phone" />
+                                <img src="img/main/icons/phone_hover.svg" alt="phone_hover" />
                             </div>
                             <figcaption>
                                 <span>Tel:</span>
@@ -51,35 +48,44 @@
 
             <!-- >> Main Contact Formular -->
             <div class="c-main-contact-form">
-                <form (ngSubmit)="this.onSubmit(contactForm)" #contactForm="ngForm">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="contact-form">
+                        <!-- Name -->
                         <label for="inputName">
-                            <span [ngClass]="{ 'form-err-input' : this.formValid.name }">{{ this.app.form.name }}</span>
-                            <input [ngClass]="{ 'form-err-field' : this.formValid.name }"
-                                [(ngModel)]="this.contactData.name" (input)="validateField('name')" type="text"
-                                name="name" id="inputName" required minlength="3">
-                            <div class="form-err-text" *ngIf="formValid.name">
+                            <span [ngClass]="{ 'form-err-input': !formValid.name }">
+                                {{ app.form.name }}
+                            </span>
+                            <input [ngClass]="{ 'form-err-field': !formValid.name }" [(ngModel)]="contactData.name"
+                                (input)="validateField('name')" type="text" name="name" id="inputName" required
+                                minlength="3" />
+                            <div class="form-err-text" *ngIf="!formValid.name">
                                 {{ errorMsg.name }}
                             </div>
                         </label>
+
+                        <!-- Email -->
                         <label for="inputEmail">
-                            <span [ngClass]="{ 'form-err-input' : this.formValid.email }">{{ this.app.form.email
-                                }}</span>
-                            <input [ngClass]="{ 'form-err-field' : this.formValid.email }"
-                                [(ngModel)]="this.contactData.email" (input)="validateField('email')" type="text"
-                                name="email" id="inputEmail" required
-                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" minlength="3">
-                            <div class="form-err-text" *ngIf="formValid.email">
+                            <span [ngClass]="{ 'form-err-input': !formValid.email }">
+                                {{ app.form.email }}
+                            </span>
+                            <input [ngClass]="{ 'form-err-field': !formValid.email }" [(ngModel)]="contactData.email"
+                                (input)="validateField('email')" type="text" name="email" id="inputEmail" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" minlength="3" />
+                            <div class="form-err-text" *ngIf="!formValid.email">
                                 {{ errorMsg.email }}
                             </div>
                         </label>
                     </div>
+
+                    <!-- Message -->
                     <label for="textareaMessage">
-                        <span [ngClass]="{ 'form-err-input' : this.formValid.msg }">{{ this.app.form.msg }}</span>
-                        <textarea [ngClass]="{ 'form-err-field' : this.formValid.msg }"
-                            [(ngModel)]="this.contactData.msg" (input)="validateField('msg')" name="message"
-                            id="textareaMessage" required minlength="3"></textarea>
-                        <div class="form-err-text" *ngIf="formValid.msg">
+                        <span [ngClass]="{ 'form-err-input': !formValid.msg }">
+                            {{ app.form.msg }}
+                        </span>
+                        <textarea [ngClass]="{ 'form-err-field': !formValid.msg }" [(ngModel)]="contactData.msg"
+                            (input)="validateField('msg')" name="message" id="textareaMessage" required
+                            minlength="3"></textarea>
+                        <div class="form-err-text" *ngIf="!formValid.msg">
                             {{ errorMsg.msg }}
                         </div>
                     </label>
@@ -88,24 +94,28 @@
                     <div class="c-main-contact-footer">
                         <figure>
                             <button type="button" class="footer-img" (click)="setFormFooterClick()" [ngClass]="{
-                                    'form-clicked-footer': formFooterClicked,
-                                    'form-err-footer': formFooterValid
-                                }">
-                                <img src="img/main/contact_list_item.svg" alt="contact_list_item">
-                                <img src="img/main/contact_list_item_hover.svg" alt="contact_list_item_hover">
-                                <img src="img/main/contact_list_item_checked.svg" alt="contact_list_item_checked">
-                                <img src="img/main/contact_list_item_error.svg" alt="contact_list_item_error">
+                  'form-clicked-footer': formFooterClicked,
+                  'form-err-footer': formFooterValid
+                }">
+                                <img src="img/main/contact_list_item.svg" alt="contact_list_item" />
+                                <img src="img/main/contact_list_item_hover.svg" alt="contact_list_item_hover" />
+                                <img src="img/main/contact_list_item_checked.svg" alt="contact_list_item_checked" />
+                                <img src="img/main/contact_list_item_error.svg" alt="contact_list_item_error" />
                             </button>
                             <figcaption>
-                                <span>{{ this.app.footer_text[0] }}</span>
-                                <a (click)="this.getNextPage()">{{ this.app.footer_text[1] }}</a>
-                                <span>{{ this.app.footer_text[2] }}</span>
+                                <span>{{ app.footer_text[0] }}</span>
+                                <a (click)="getNextPage()">{{ app.footer_text[1] }}</a>
+                                <span>{{ app.footer_text[2] }}</span>
                             </figcaption>
                         </figure>
                         <div>
-                            <button type="submit">
-                                <span>{{ this.app.btn_text }}</span>
+                            <button type="submit" [disabled]="!this.isFormReadyToSubmit" [ngClass]="{
+    'form-submit-disabled': !this.isFormReadyToSubmit,
+    'form-submit-active': this.isFormReadyToSubmit
+  }">
+                                <span>{{ app.btn_text }}</span>
                             </button>
+
                         </div>
                     </div>
                 </form>

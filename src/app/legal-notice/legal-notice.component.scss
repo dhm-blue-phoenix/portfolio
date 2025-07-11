@@ -5,9 +5,13 @@
 section {
     position: relative;
     padding: 16px;
-    height: calc(100vh - 214px - 104px);
+    height: calc(100vh - 214px);
+
+    @include flex($ai: flex-start);
 
     >div {
+        width: 1214px;
+        max-width: 1214px;
         background-color: $main-color-lightblack;
         padding: 16px;
         border-radius: 8px;

@@ -17,6 +17,10 @@
         }
     }
 
+    .container {
+        padding: 8px;
+    }
+
     // >> Left Container
     .c-left {
         padding-bottom: 16px;
@@ -37,9 +41,9 @@
 
             >span {
                 user-select: text;
-
+                
                 @include font($c: $main-color-white, $fw: 700, $fs: 18px, $ff: 'Josefin Sans');
-
+                
                 >span {
                     color: $main-color-lightblue;
                 }
