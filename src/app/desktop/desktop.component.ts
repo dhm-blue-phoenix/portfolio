@@ -22,6 +22,7 @@ import { FooterComponent} from './footer/footer.component';
   templateUrl: './desktop.component.html',
   styleUrls: [
     '../response/mobile/mobile.scss',
+    '../response/tablet/tablet.scss',
     './desktop.component.scss'
   ]
 })

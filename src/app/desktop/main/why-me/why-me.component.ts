@@ -13,6 +13,7 @@ import { LanguageService } from '../../../services/language.service';
   templateUrl: './why-me.component.html',
   styleUrls: [
     '../../../response/mobile/main/why-me.scss',
+    '../../../response/tablet/main/why-me.scss',
     './why-me.component.scss'
   ]
 })

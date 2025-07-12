@@ -14,6 +14,7 @@ import { NavbarService } from '../../services/navbar.service';
   templateUrl: './navbar.component.html',
   styleUrls: [
     '../../response/mobile/navbar.scss',
+    '../../response/tablet/navbar.scss',
     './navbar.component.scss'
   ]
 })

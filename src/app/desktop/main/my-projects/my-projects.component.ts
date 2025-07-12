@@ -13,6 +13,7 @@ import { LanguageService } from '../../../services/language.service';
   templateUrl: './my-projects.component.html',
   styleUrls: [
     '../../../response/mobile/main/my-projects.scss',
+    '../../../response/tablet/main/my-projects.scss',
     './my-projects.component.scss'
   ]
 })

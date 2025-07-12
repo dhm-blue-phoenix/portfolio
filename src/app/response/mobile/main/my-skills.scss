@@ -2,7 +2,7 @@
 @use '../../../../styles/global-fonts' as *;
 @use '../../../../styles/globle-mixin' as *;
 
-@media (max-width: 1440px) {
+@media (max-width: 900px) {
     .mySkills {
 
         @include flex($fd: column, $g: 30px);

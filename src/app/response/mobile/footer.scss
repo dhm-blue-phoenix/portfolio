@@ -2,7 +2,7 @@
 @use '../../../styles/global-fonts' as *;
 @use '../../../styles/globle-mixin' as *;
 
-@media (max-width: 1440px) {
+@media (max-width: 900px) {
     section {
         user-select: none;
         width: 100%;

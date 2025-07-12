@@ -2,9 +2,8 @@
 @use '../../../styles/global-fonts' as *;
 @use '../../../styles/globle-mixin' as *;
 
-// >> Desktop Design << \\
-@media (min-width: 1440px) {
-    footer {
-        width: 1216px;
+@media (min-width: 900px) {
+    .mobile {
+        display: none;
     }
 }

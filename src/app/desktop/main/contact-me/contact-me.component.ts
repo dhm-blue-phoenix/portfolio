@@ -40,6 +40,7 @@ interface ContactData {
   templateUrl: './contact-me.component.html',
   styleUrls: [
     '../../../response/mobile/main/contact-me.scss',
+    '../../../response/tablet/main/contact-me.scss',
     './contact-me.component.scss'
   ]
 })

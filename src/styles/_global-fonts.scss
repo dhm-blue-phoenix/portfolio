@@ -8,7 +8,7 @@
     src: url('../assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
 }
 
-@mixin font($c: null, $ff: null, $fw: null, $fs: null) {
+@mixin font($c: null, $ff: null, $fw: null, $fs: 16px) {
     @if ($c) {
         color: $c;
     }

@@ -1,0 +1,123 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+@media (min-width: 900px) {
+    section {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    
+    nav {
+        user-select: none;
+        background-color: $main-color-lightblue;
+        max-height: 104px;
+        height: 104px;
+
+        @include flex();
+
+        >div {
+            max-width: 1440px;
+            width: 1440px;
+
+            @include flex($jc: space-around);
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    .logo {
+        cursor: pointer;
+
+        >a {
+            >img {
+
+                @include img($w: 58px, $h: 72px, $of: cover);
+
+                &:first-child {
+                    display: block;
+                }
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // >> Nav Menu
+    .menu-list {
+        min-width: 700px;
+
+        @include flex($g: 110px);
+    }
+
+    .menu-item {
+        transition: all ease-in-out 125ms;
+        min-width: calc(170px - 120px);
+        min-height: 31px;
+        text-align: center;
+
+        @include flex();
+
+        >a {
+            >span {
+                user-select: none;
+
+                @include font($c: $main-color-black, $ff: "Josefin Sans", $fw: 500, $fs: calc(26px - 5px));
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                >span {
+                    color: $main-color-white;
+                }
+            }
+        }
+    }
+
+    .activ-menu-item {
+        @include bg-img($bg-i: "../assets/img/change_language/ellipse.svg", $bg-s: contain);
+
+        padding: 16px;
+
+        >span {
+            color: $main-color-white !important;
+        }
+    }
+
+}
+
+// >> Buttons
+.mobile-change-language,
+.change-language {
+    transition: all ease-in-out 125ms;
+    width: 92px;
+    height: 31px;
+
+    @include flex($jc: space-around);
+
+    >button {
+        width: 36.8px;
+        height: 24px;
+
+        >span {
+            text-transform: uppercase;
+
+            @include font($c: $main-color-black, $ff: "Josefin Sans", $fw: 400, $fs: 18px);
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            >span {
+                color: $main-color-white;
+            }
+        }
+    }
+}

@@ -1,0 +1,230 @@
+@use '../../../styles/global-colors' as *;
+@use '../../../styles/global-fonts' as *;
+@use '../../../styles/globle-mixin' as *;
+
+$scale: 200px;
+
+@media (min-width: 900px) {
+    section {
+        user-select: none;
+        min-height: calc(100vh - 104px);
+        
+        @include flex($ai: flex-end);
+    }
+    
+    header {
+        width: 100%;
+        max-width: 1214px;
+        max-height: 705px;
+        height: calc(100vh - 104px);
+        display: flex;
+        padding: 16px;
+        // padding: 48px;
+        padding-bottom: 0;
+    }
+
+    .header-left,
+    .header-right {
+        flex: 1;
+    }
+
+    // >> Header Left Container
+    .header-left {
+
+        @include flex($ai: flex-end);
+
+        >figure {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            @include flex($ai: flex-end);
+
+            >img {
+                z-index: 1;
+
+                @include img($w: calc(535px - $scale), $h: calc(683px - $scale));
+
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                &:hover {
+
+                    &:hover~.left-img-bg {
+                        >div {
+                            opacity: 0;
+                        }
+                    }
+
+                    &:hover~.left-img-bg-hover {
+                        >div {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .left-img-bg,
+    .left-img-bg-hover {
+        position: absolute;
+
+        width: calc(580px - $scale);
+        height: calc(616px - $scale);
+
+        @include flex();
+
+        >div {
+            transform: rotate(241deg);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            min-width: calc(580px - $scale);
+            min-height: calc(616px - $scale);
+
+            transition: opacity 325ms ease-in-out;
+            z-index: 0;
+        }
+    }
+
+    .left-img-bg {
+        >div {
+            opacity: 1;
+            background-image: url('../../../assets/img/header/ellipseDefault.svg');
+        }
+    }
+
+    .left-img-bg-hover {
+        >div {
+            background-image: url('../../../assets/img/header/ellipseHover.svg');
+            opacity: 0;
+        }
+    }
+
+    // >> Header Right Container
+    .header-right {
+
+        >div {
+            height: 100%;
+
+            @include flex($jc: space-around, $ai: normal, $fd: column);
+        }
+    }
+
+    .right-logo {
+        flex: 1;
+        position: relative;
+
+        >figure {
+
+            >hr {
+                opacity: 0;
+            }
+
+            &:first-child {
+                height: 100%;
+
+                @include flex($jc: space-evenly, $fd: column);
+
+                >img {
+                    &:hover {
+                        transition: all .5s;
+                        transform: scaleX(1.2);
+                        cursor: pointer;
+                    }
+
+                    @include img($w: calc(66px * 2), $h: auto);
+                }
+            }
+        }
+    }
+
+    .right-icon-bar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+
+        @include flex();
+
+        >div {
+            height: 122px;
+
+            @include flex($jc: space-between, $fd: column);
+        }
+    }
+
+    .right-icon-bar-item {
+        position: relative;
+
+        >img {
+
+            @include img($w: 30px, $h: 30px);
+        }
+
+        >a {
+            opacity: 0;
+            position: absolute;
+            border-radius: 100%;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .right-headline {
+        flex: 1;
+        text-align: center;
+        color: $main-color-white;
+        user-select: text;
+
+        >h1 {
+
+            @include font($fw: 400, $fs: calc(80px - 20px), $ff: 'Anta');
+        }
+
+        >h2 {
+            text-transform: uppercase;
+
+            @include font($fw: 400, $fs: calc(40px - 10px), $ff: 'Josefin Sans');
+        }
+    }
+
+    .right-btn {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        >figure {
+            height: 100%;
+
+            @include flex($jc: space-evenly, $fd: column-reverse);
+
+            >hr {
+                opacity: 0;
+            }
+
+            >a {
+                transition: all ease-in-out 125ms;
+                border-radius: 30px;
+                height: 89px;
+
+                &:hover {
+                    background-color: $main-color-white-hover;
+                }
+
+                >img {
+
+                    @include img($w: 38px, $h: 89px);
+                }
+            }
+        }
+    }
+}

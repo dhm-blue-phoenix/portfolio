@@ -13,6 +13,7 @@ import { LanguageService } from '../../../services/language.service';
   templateUrl: './need-a-teamplayer.component.html',
   styleUrls: [
     '../../../response/mobile/main/need-a-teamplayer.scss',
+    '../../../response/tablet/main/need-a-teamplayer.scss',
     './need-a-teamplayer.component.scss'
   ]
 })
