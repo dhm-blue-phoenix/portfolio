@@ -5,7 +5,9 @@
 section {
     position: relative;
     padding: 16px;
-    height: calc(100vh - 214px);
+    padding-top: 104px;
+    overflow: auto;
+    height: calc(100vh);
 
     @include flex($ai: flex-start);
 
@@ -47,5 +49,25 @@ a {
 
     &:hover {
         color: $main-color-lightblue;
+    }
+}
+
+.navbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@media (max-height: 700px) {
+    section {
+        height: calc(100vh + 100px);
     }
 }

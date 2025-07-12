@@ -1,6 +1,6 @@
-<app-navbar />
 
 <section>
+    <app-navbar class="navbar" />
     <div>
         <h1>{{ app.legal_notice.headline }}</h1>
         
@@ -17,6 +17,5 @@
             <a [href]="app.legal_notice.source.url" target="_blank">{{ app.legal_notice.source.url }}</a>
         </p>
     </div>
+    <app-footer class="footer"/>
 </section>
-
-<app-footer />
